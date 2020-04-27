@@ -70,3 +70,9 @@ range. It is more well-tested in the wild.
 
 Closes #2310
 ```
+
+#### Source
+
+* https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
+* http://karma-runner.github.io/1.0/dev/git-commit-msg.html
+* https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines
