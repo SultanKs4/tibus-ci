@@ -9,6 +9,27 @@ Cara push yang benar :
 1. Buat branch baru contoh : sultan
 2. Ganti file apapun yang dibutuhkan dibranch kamu jika sudah baru push branchmu dan jika sudah fix silahkan pull request ke master, nanti akan direview dan jika disetujui akan digabungkan ke branch master
 
+Memperbarui branch:
+
+memperbarui branch ini digunakan untuk menyamakan branch mu dengan branch master yang telah menerima commit dari berbagai branch lain, caranya:
+
+1. buka terminal / cmd / ps / git bash dan arahkan ke folder project ini
+2. perbarui branch master localmu menjadi sama dengan branch master yang ada di internet:
+
+    ```zsh
+    git checkout master
+    git pull
+    ```
+
+3. perbarui branchmu agar sama dengan branch master:
+
+   ```zsh
+   git checkout <branchmu>
+   git rebase master
+   ```
+
+4. selamat branchmu saat ini sudah sama dengan branch master.
+
 ## Commit Message Guideline
 
 tujuan dari pesan commit memiliki semacam rules ini agar lebih mudah pembacaan pesan dan memahami perubahan apa yang terjadi
