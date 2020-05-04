@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 30, 2020 at 05:50 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Host: localhost
+-- Generation Time: May 04, 2020 at 06:12 AM
+-- Server version: 10.4.12-MariaDB
+-- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -226,7 +225,7 @@ INSERT INTO `tiket` (`id`, `kode_booking`, `nama_penumpang`, `no_ktp_penumpang`,
 
 CREATE TABLE `tiket_booking` (
   `id` int(11) NOT NULL,
-  `name` varchar(30) NOT NULL
+  `name` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -234,7 +233,8 @@ CREATE TABLE `tiket_booking` (
 --
 
 INSERT INTO `tiket_booking` (`id`, `name`) VALUES
-(1, 'RES-001');
+(1, 10001),
+(2, 10002);
 
 --
 -- Indexes for dumped tables
@@ -373,7 +373,7 @@ ALTER TABLE `tiket`
 -- AUTO_INCREMENT for table `tiket_booking`
 --
 ALTER TABLE `tiket_booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
