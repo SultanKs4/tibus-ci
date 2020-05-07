@@ -51,7 +51,12 @@
                             <p>Terminal</p>
                         </a>
                     </li>
-
+                    <li>
+                        <a class="nav-link" href="<?= base_url() ?>admin_po">
+                            <i class="nc-icon nc-bus-front-12"></i>
+                            <p>PO</p>
+                        </a>
+                    </li>
                     <li class="nav-item active active-pro">
                         <a class="nav-link active" href="<?= base_url() ?>admin_akun">
                             <i class="nc-icon nc-alien-33"></i>
