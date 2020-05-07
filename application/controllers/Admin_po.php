@@ -15,9 +15,6 @@ class Admin_po extends CI_Controller
     {
         $data['title'] = 'po';
         $data['po'] = $this->po_model->getallpo();
-        if ($this->input->post('keyword')) {
-            $data['po'] = $this->po_model->caridatapo();
-        }
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/po/index', $data);
         $this->load->view('admin/template/footer');

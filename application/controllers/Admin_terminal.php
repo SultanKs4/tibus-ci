@@ -15,9 +15,6 @@ class Admin_terminal extends CI_Controller
     {
         $data['title'] = 'terminal';
         $data['terminal'] = $this->terminal_model->getallterminal();
-        if ($this->input->post('keyword')) {
-            $data['terminal'] = $this->terminal_model->caridataterminal();
-        }
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/terminal/index', $data);
         $this->load->view('admin/template/footer');
