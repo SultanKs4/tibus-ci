@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./user.html">
+                        <a class="nav-link" href="<?= base_url() ?>admin_akun">
                             <i class="nc-icon nc-single-02"></i>
                             <p>Akun</p>
                         </a>
