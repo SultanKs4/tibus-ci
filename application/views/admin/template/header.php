@@ -74,6 +74,24 @@
                             <p>Payment Status</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>admin_booking">
+                            <i class="nc-icon nc-cart-simple"></i>
+                            <p>Booking</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>admin_tiket">
+                            <i class="nc-icon nc-tag-content"></i>
+                            <p>Tiket</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>admin_payment">
+                            <i class="nc-icon nc-money-coins"></i>
+                            <p>Payment</p>
+                        </a>
+                    </li>
                     <li class="nav-item active active-pro">
                         <a class="nav-link" href="<?= base_url() ?>admin_akun">
                             <i class="nc-icon nc-alien-33"></i>
