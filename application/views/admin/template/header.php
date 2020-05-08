@@ -15,7 +15,6 @@
     <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="<?= base_url() ?>assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="<?= base_url() ?>assets/css/demo.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -33,38 +32,50 @@
                     </a>
                 </div>
                 <ul class="nav">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="dashboard.html">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>admin_akun">
                             <i class="nc-icon nc-single-02"></i>
                             <p>Akun</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>admin_terminal">
                             <i class="nc-icon nc-square-pin"></i>
                             <p>Terminal</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>admin_po">
                             <i class="nc-icon nc-bus-front-12"></i>
                             <p>PO</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>admin_trayek">
                             <i class="nc-icon nc-map-big"></i>
                             <p>Trayek</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>admin_method">
+                            <i class="nc-icon nc-credit-card"></i>
+                            <p>Payment Method</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>admin_status">
+                            <i class="nc-icon nc-check-2"></i>
+                            <p>Payment Status</p>
+                        </a>
+                    </li>
                     <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="<?= base_url() ?>admin_akun">
+                        <a class="nav-link" href="<?= base_url() ?>admin_akun">
                             <i class="nc-icon nc-alien-33"></i>
                             <p>Upgrade plan</p>
                         </a>
