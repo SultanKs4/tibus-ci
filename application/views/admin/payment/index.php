@@ -26,9 +26,9 @@
                                         <td><?= $pym['kode_booking']; ?></td>
                                         <td><?= $pym['status']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>admin_payment/hapus/<?= $pym['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
-                                            <a href="<?= base_url(); ?>admin_payment/edit/<?= $pym['id']; ?> " class="badge badge-success float-right">Edit</a>
-                                            <a href="<?= base_url(); ?>admin_payment/detail/<?= $pym['id']; ?> " class="badge badge-primary float-right">Detail</a>
+                                            <a href="<?= base_url(); ?>admin/payment/hapus/<?= $pym['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
+                                            <a href="<?= base_url(); ?>admin/payment/edit/<?= $pym['id']; ?> " class="badge badge-success float-right">Edit</a>
+                                            <a href="<?= base_url(); ?>admin/payment/detail/<?= $pym['id']; ?> " class="badge badge-primary float-right">Detail</a>
                                         </td>
                                     </tr>
                                 <?php

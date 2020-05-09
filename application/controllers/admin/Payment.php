@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin_payment extends CI_Controller
+class Payment extends CI_Controller
 {
 
     public function __construct()
@@ -84,4 +84,4 @@ class Admin_payment extends CI_Controller
     }
 }
     
-    /* End of file Admin_payment.php */
+    /* End of file Payment.php */

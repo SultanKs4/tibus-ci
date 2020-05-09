@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin_trayek extends CI_Controller
+class Trayek extends CI_Controller
 {
 
     public function __construct()
@@ -91,4 +91,4 @@ class Admin_trayek extends CI_Controller
     }
 }
     
-    /* End of file Admin_trayek.php */
+    /* End of file Trayek.php */

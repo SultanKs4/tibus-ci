@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin_terminal extends CI_Controller
+class Terminal extends CI_Controller
 {
 
     public function __construct()
@@ -67,4 +67,4 @@ class Admin_terminal extends CI_Controller
     }
 }
     
-    /* End of file Admin_terminal.php */
+    /* End of file Terminal.php */

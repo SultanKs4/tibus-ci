@@ -24,8 +24,8 @@
                                     <tr>
                                         <td><?= $bkg['name']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>admin_booking/hapus/<?= $bkg['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
-                                            <a href="<?= base_url(); ?>admin_booking/edit/<?= $bkg['id']; ?> " class="badge badge-success float-right">Edit</a>
+                                            <a href="<?= base_url(); ?>admin/booking/hapus/<?= $bkg['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
+                                            <a href="<?= base_url(); ?>admin/booking/edit/<?= $bkg['id']; ?> " class="badge badge-success float-right">Edit</a>
                                         </td>
                                     </tr>
                                 <?php
