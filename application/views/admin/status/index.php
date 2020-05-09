@@ -9,7 +9,7 @@
                             <p class="card-category col-md-9">Data Status</p>
                             <div class="row mt-4 float-right mr-5 col-md-2">
                                 <div class="col-md-6">
-                                    <a href="<?= base_url(); ?>admin_status/tambah" class="btn btn-primary">Tambah Data</a>
+                                    <a href="<?= base_url(); ?>admin/status/tambah" class="btn btn-primary">Tambah Data</a>
                                 </div>
                             </div>
                         </div>
@@ -27,8 +27,8 @@
                                     <tr>
                                         <td><?= $sts['name']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>admin_status/hapus/<?= $sts['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
-                                            <a href="<?= base_url(); ?>admin_status/edit/<?= $sts['id']; ?> " class="badge badge-success float-right">Edit</a>
+                                            <a href="<?= base_url(); ?>admin/status/hapus/<?= $sts['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
+                                            <a href="<?= base_url(); ?>admin/status/edit/<?= $sts['id']; ?> " class="badge badge-success float-right">Edit</a>
                                         </td>
                                     </tr>
                                 <?php

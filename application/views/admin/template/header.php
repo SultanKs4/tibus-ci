@@ -33,69 +33,63 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_dashboard">
+                        <a class="nav-link" href="<?= base_url() ?>admin/dashboard">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_akun">
+                        <a class="nav-link" href="<?= base_url() ?>admin/akun">
                             <i class="nc-icon nc-single-02"></i>
                             <p>Akun</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_terminal">
+                        <a class="nav-link" href="<?= base_url() ?>admin/terminal">
                             <i class="nc-icon nc-square-pin"></i>
                             <p>Terminal</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_po">
+                        <a class="nav-link" href="<?= base_url() ?>admin/po">
                             <i class="nc-icon nc-bus-front-12"></i>
                             <p>PO</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_trayek">
+                        <a class="nav-link" href="<?= base_url() ?>admin/trayek">
                             <i class="nc-icon nc-map-big"></i>
                             <p>Trayek</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_method">
+                        <a class="nav-link" href="<?= base_url() ?>admin/method">
                             <i class="nc-icon nc-credit-card"></i>
                             <p>Payment Method</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_status">
+                        <a class="nav-link" href="<?= base_url() ?>admin/status">
                             <i class="nc-icon nc-check-2"></i>
                             <p>Payment Status</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_booking">
+                        <a class="nav-link" href="<?= base_url() ?>admin/booking">
                             <i class="nc-icon nc-cart-simple"></i>
                             <p>Booking</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_tiket">
+                        <a class="nav-link" href="<?= base_url() ?>admin/tiket">
                             <i class="nc-icon nc-tag-content"></i>
                             <p>Tiket</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin_payment">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="<?= base_url() ?>admin/payment">
                             <i class="nc-icon nc-money-coins"></i>
                             <p>Payment</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active active-pro">
-                        <a class="nav-link" href="<?= base_url() ?>admin_akun">
-                            <i class="nc-icon nc-alien-33"></i>
-                            <p>Upgrade plan</p>
                         </a>
                     </li>
                 </ul>

@@ -9,7 +9,7 @@
                             <p class="card-category col-md-9">Data Po</p>
                             <div class="row mt-4 float-right mr-5 col-md-2">
                                 <div class="col-md-6">
-                                    <a href="<?= base_url(); ?>admin_po/tambah" class="btn btn-primary">Tambah Data</a>
+                                    <a href="<?= base_url(); ?>admin/po/tambah" class="btn btn-primary">Tambah Data</a>
                                 </div>
                             </div>
                         </div>
@@ -26,8 +26,8 @@
                                     <tr>
                                         <td><?= $p['nama']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>admin_po/hapus/<?= $p['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
-                                            <a href="<?= base_url(); ?>admin_po/edit/<?= $p['id']; ?> " class="badge badge-success float-right">Edit</a>
+                                            <a href="<?= base_url(); ?>admin/po/hapus/<?= $p['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
+                                            <a href="<?= base_url(); ?>admin/po/edit/<?= $p['id']; ?> " class="badge badge-success float-right">Edit</a>
                                         </td>
                                     </tr>
                                 <?php

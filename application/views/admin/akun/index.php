@@ -23,7 +23,7 @@
                                         <td><?= $akn['nama_depan']; ?> <?= $akn['nama_belakang']; ?></td>
                                         <td><?= $akn['email']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>admin_akun/detail/<?= $akn['id']; ?>" class="badge badge-primary float-right">detail</a>
+                                            <a href="<?= base_url(); ?>admin/akun/detail/<?= $akn['id']; ?>" class="badge badge-primary float-right">detail</a>
                                         </td>
                                     </tr>
                                 <?php
