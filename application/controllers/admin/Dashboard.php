@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin_dashboard extends CI_Controller
+class Dashboard extends CI_Controller
 {
 
     public function __construct()
@@ -19,4 +19,4 @@ class Admin_dashboard extends CI_Controller
     }
 }
     
-    /* End of file Admin_dashboard.php */
+    /* End of file Dashboard.php */

@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin_akun extends CI_Controller
+class Akun extends CI_Controller
 {
 
     public function __construct()
@@ -13,7 +13,7 @@ class Admin_akun extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'akun';
+        $data['title'] = 'Akun';
         $data['akun'] = $this->akun_model->getallakun();
         if ($this->input->post('keyword')) {
             $data['akun'] = $this->akun_model->caridataakun();
@@ -78,4 +78,4 @@ class Admin_akun extends CI_Controller
     }
 }
     
-    /* End of file Admin_akun.php */
+    /* End of file Akun.php */

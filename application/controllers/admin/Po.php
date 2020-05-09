@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin_po extends CI_Controller
+class Po extends CI_Controller
 {
 
     public function __construct()
@@ -62,4 +62,4 @@ class Admin_po extends CI_Controller
     }
 }
     
-    /* End of file Admin_po.php */
+    /* End of file Po.php */
