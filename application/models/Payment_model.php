@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
 
-class payment_model extends CI_Model
+class Payment_model extends CI_Model
 {
 
     private $_client;

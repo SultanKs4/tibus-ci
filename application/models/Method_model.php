@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
 
-class terminal_model extends CI_Model
+class Method_model extends CI_Model
 {
 
     private $_client;
@@ -16,9 +16,9 @@ class terminal_model extends CI_Model
         ]);
     }
 
-    public function getallterminal()
+    public function getallmethod()
     {
-        $response = $this->_client->request('GET', 'terminal', [
+        $response = $this->_client->request('GET', 'method', [
             'query' => [
                 'tkn' => 'qwe123'
             ]
@@ -28,9 +28,9 @@ class terminal_model extends CI_Model
         return $result['data'];
     }
 
-    public function hapusdataterminal($id)
+    public function hapusdatamethod($id)
     {
-        $response = $this->_client->request('DELETE', 'terminal', [
+        $response = $this->_client->request('DELETE', 'method', [
             'form_params' => [
                 'id' => $id,
                 'tkn' => 'qwe123'
@@ -41,15 +41,13 @@ class terminal_model extends CI_Model
         return $result;
     }
 
-    public function tambahdataterminal() // JS2 B3 no 3
+    public function tambahdatamethod() // JS2 B3 no 3
     {
         $data = [
-            "nama" => $this->input->post('nama', true),
-            "kota" => $this->input->post('kota', true),
-            "alamat" => $this->input->post('alamat', true),
+            "name" => $this->input->post('name', true),
             'tkn' => 'qwe123'
         ];
-        $response = $this->_client->request('POST', 'terminal', [
+        $response = $this->_client->request('POST', 'method', [
             'form_params' => $data
         ]);
 
@@ -57,25 +55,23 @@ class terminal_model extends CI_Model
         return $result;
     }
 
-    public function ubahdataterminal() // JS2 B3 no 3
+    public function ubahdatamethod() // JS2 B3 no 3
     {
         $data = [
-            "nama" => $this->input->post('nama', true),
-            "kota" => $this->input->post('kota', true),
-            "alamat" => $this->input->post('alamat', true),
+            "name" => $this->input->post('name', true),
             "id" => $this->input->post('id', true),
             'tkn' => 'qwe123'
         ];
-        $response = $this->_client->request('PUT', 'terminal', [
+        $response = $this->_client->request('PUT', 'method', [
             'form_params' => $data
         ]);
 
         $result = json_decode($response->getBody()->getContents(), true);
         return $result;
     }
-    public function getterminalbyid($id) //JS4 B1 no 5
+    public function getmethodbyid($id) //JS4 B1 no 5
     {
-        $response = $this->_client->request('GET', 'terminal', [
+        $response = $this->_client->request('GET', 'method', [
             'query' => [
                 'tkn' => 'qwe123',
                 'id' => $id
@@ -87,4 +83,4 @@ class terminal_model extends CI_Model
     }
 }
     
-    /* End of file terminal_model.php */
+    /* End of file method_model.php */

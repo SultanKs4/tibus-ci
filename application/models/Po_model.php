@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
 
-class booking_model extends CI_Model
+class Po_model extends CI_Model
 {
 
     private $_client;
@@ -16,9 +16,9 @@ class booking_model extends CI_Model
         ]);
     }
 
-    public function getallbooking()
+    public function getallpo()
     {
-        $response = $this->_client->request('GET', 'booking', [
+        $response = $this->_client->request('GET', 'po', [
             'query' => [
                 'tkn' => 'qwe123'
             ]
@@ -28,9 +28,9 @@ class booking_model extends CI_Model
         return $result['data'];
     }
 
-    public function hapusdatabooking($id)
+    public function hapusdatapo($id)
     {
-        $response = $this->_client->request('DELETE', 'booking', [
+        $response = $this->_client->request('DELETE', 'po', [
             'form_params' => [
                 'id' => $id,
                 'tkn' => 'qwe123'
@@ -41,13 +41,13 @@ class booking_model extends CI_Model
         return $result;
     }
 
-    public function tambahdatabooking() // JS2 B3 no 3
+    public function tambahdatapo() // JS2 B3 no 3
     {
         $data = [
-            "name" => $this->input->post('name', true),
+            "nama" => $this->input->post('nama', true),
             'tkn' => 'qwe123'
         ];
-        $response = $this->_client->request('POST', 'booking', [
+        $response = $this->_client->request('POST', 'po', [
             'form_params' => $data
         ]);
 
@@ -55,23 +55,23 @@ class booking_model extends CI_Model
         return $result;
     }
 
-    public function ubahdatabooking() // JS2 B3 no 3
+    public function ubahdatapo() // JS2 B3 no 3
     {
         $data = [
-            "name" => $this->input->post('name', true),
+            "nama" => $this->input->post('nama', true),
             "id" => $this->input->post('id', true),
             'tkn' => 'qwe123'
         ];
-        $response = $this->_client->request('PUT', 'booking', [
+        $response = $this->_client->request('PUT', 'po', [
             'form_params' => $data
         ]);
 
         $result = json_decode($response->getBody()->getContents(), true);
         return $result;
     }
-    public function getbookingbyid($id) //JS4 B1 no 5
+    public function getpobyid($id) //JS4 B1 no 5
     {
-        $response = $this->_client->request('GET', 'booking', [
+        $response = $this->_client->request('GET', 'po', [
             'query' => [
                 'tkn' => 'qwe123',
                 'id' => $id
@@ -83,4 +83,4 @@ class booking_model extends CI_Model
     }
 }
     
-    /* End of file booking_model.php */
+    /* End of file po_model.php */

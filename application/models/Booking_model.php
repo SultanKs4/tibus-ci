@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
 
-class method_model extends CI_Model
+class Booking_model extends CI_Model
 {
 
     private $_client;
@@ -16,9 +16,9 @@ class method_model extends CI_Model
         ]);
     }
 
-    public function getallmethod()
+    public function getallbooking()
     {
-        $response = $this->_client->request('GET', 'method', [
+        $response = $this->_client->request('GET', 'booking', [
             'query' => [
                 'tkn' => 'qwe123'
             ]
@@ -28,9 +28,9 @@ class method_model extends CI_Model
         return $result['data'];
     }
 
-    public function hapusdatamethod($id)
+    public function hapusdatabooking($id)
     {
-        $response = $this->_client->request('DELETE', 'method', [
+        $response = $this->_client->request('DELETE', 'booking', [
             'form_params' => [
                 'id' => $id,
                 'tkn' => 'qwe123'
@@ -41,13 +41,13 @@ class method_model extends CI_Model
         return $result;
     }
 
-    public function tambahdatamethod() // JS2 B3 no 3
+    public function tambahdatabooking() // JS2 B3 no 3
     {
         $data = [
             "name" => $this->input->post('name', true),
             'tkn' => 'qwe123'
         ];
-        $response = $this->_client->request('POST', 'method', [
+        $response = $this->_client->request('POST', 'booking', [
             'form_params' => $data
         ]);
 
@@ -55,23 +55,23 @@ class method_model extends CI_Model
         return $result;
     }
 
-    public function ubahdatamethod() // JS2 B3 no 3
+    public function ubahdatabooking() // JS2 B3 no 3
     {
         $data = [
             "name" => $this->input->post('name', true),
             "id" => $this->input->post('id', true),
             'tkn' => 'qwe123'
         ];
-        $response = $this->_client->request('PUT', 'method', [
+        $response = $this->_client->request('PUT', 'booking', [
             'form_params' => $data
         ]);
 
         $result = json_decode($response->getBody()->getContents(), true);
         return $result;
     }
-    public function getmethodbyid($id) //JS4 B1 no 5
+    public function getbookingbyid($id) //JS4 B1 no 5
     {
-        $response = $this->_client->request('GET', 'method', [
+        $response = $this->_client->request('GET', 'booking', [
             'query' => [
                 'tkn' => 'qwe123',
                 'id' => $id
@@ -83,4 +83,4 @@ class method_model extends CI_Model
     }
 }
     
-    /* End of file method_model.php */
+    /* End of file booking_model.php */

@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
 
-class po_model extends CI_Model
+class Terminal_model extends CI_Model
 {
 
     private $_client;
@@ -16,9 +16,9 @@ class po_model extends CI_Model
         ]);
     }
 
-    public function getallpo()
+    public function getallterminal()
     {
-        $response = $this->_client->request('GET', 'po', [
+        $response = $this->_client->request('GET', 'terminal', [
             'query' => [
                 'tkn' => 'qwe123'
             ]
@@ -28,9 +28,9 @@ class po_model extends CI_Model
         return $result['data'];
     }
 
-    public function hapusdatapo($id)
+    public function hapusdataterminal($id)
     {
-        $response = $this->_client->request('DELETE', 'po', [
+        $response = $this->_client->request('DELETE', 'terminal', [
             'form_params' => [
                 'id' => $id,
                 'tkn' => 'qwe123'
@@ -41,13 +41,15 @@ class po_model extends CI_Model
         return $result;
     }
 
-    public function tambahdatapo() // JS2 B3 no 3
+    public function tambahdataterminal() // JS2 B3 no 3
     {
         $data = [
             "nama" => $this->input->post('nama', true),
+            "kota" => $this->input->post('kota', true),
+            "alamat" => $this->input->post('alamat', true),
             'tkn' => 'qwe123'
         ];
-        $response = $this->_client->request('POST', 'po', [
+        $response = $this->_client->request('POST', 'terminal', [
             'form_params' => $data
         ]);
 
@@ -55,23 +57,25 @@ class po_model extends CI_Model
         return $result;
     }
 
-    public function ubahdatapo() // JS2 B3 no 3
+    public function ubahdataterminal() // JS2 B3 no 3
     {
         $data = [
             "nama" => $this->input->post('nama', true),
+            "kota" => $this->input->post('kota', true),
+            "alamat" => $this->input->post('alamat', true),
             "id" => $this->input->post('id', true),
             'tkn' => 'qwe123'
         ];
-        $response = $this->_client->request('PUT', 'po', [
+        $response = $this->_client->request('PUT', 'terminal', [
             'form_params' => $data
         ]);
 
         $result = json_decode($response->getBody()->getContents(), true);
         return $result;
     }
-    public function getpobyid($id) //JS4 B1 no 5
+    public function getterminalbyid($id) //JS4 B1 no 5
     {
-        $response = $this->_client->request('GET', 'po', [
+        $response = $this->_client->request('GET', 'terminal', [
             'query' => [
                 'tkn' => 'qwe123',
                 'id' => $id
@@ -83,4 +87,4 @@ class po_model extends CI_Model
     }
 }
     
-    /* End of file po_model.php */
+    /* End of file terminal_model.php */
