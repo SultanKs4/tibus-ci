@@ -1,4 +1,6 @@
 $().ready(function() {
+    var url = window.location;
+    $('ul.nav li.nav-item a.nav-link[href="' + url + '"]').parent().addClass('active');
     $sidebar = $('.sidebar');
     $sidebar_img_container = $sidebar.find('.sidebar-background');
 
