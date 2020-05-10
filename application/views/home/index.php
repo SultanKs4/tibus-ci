@@ -10,10 +10,15 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Asal</span>
-										<select class="form-control">
-											<option>Kota 1</option>
-											<option>Kota 2</option>
-											<option>Kota 3</option>
+										<select class="form-control" name="dari">
+											<option value="">---select---</option>
+											<?php
+											foreach ($terminal as $trm) :
+											?>
+												<option value="<?= $trm['id'] ?>"><?= $trm['kota'] ?>(<?= $trm['nama'] ?>)</option>
+											<?php
+											endforeach;
+											?>
 										</select>
 										<span class="select-arrow"></span>
 									</div>
@@ -21,10 +26,15 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Tujuan</span>
-										<select class="form-control">
-											<option>Kota 1</option>
-											<option>Kota 2</option>
-											<option>Kota 3</option>
+										<select class="form-control" name="tujuan">
+											<option value="">---select---</option>
+											<?php
+											foreach ($terminal as $trm) :
+											?>
+												<option value="<?= $trm['id'] ?>"><?= $trm['kota'] ?>(<?= $trm['nama'] ?>)</option>
+											<?php
+											endforeach;
+											?>
 										</select>
 										<span class="select-arrow"></span>
 									</div>
@@ -39,9 +49,13 @@
 									<div class="form-group">
 										<span class="form-label">Penumpang</span>
 										<select class="form-control">
-											<option>0</option>
-											<option>1</option>
-											<option>2</option>
+											<?php
+											for ($i = 1; $i < 10; $i++) {
+											?>
+												<option value="<?= $i ?>"><?= $i ?> Orang</option>
+											<?php
+											};
+											?>
 										</select>
 										<span class="select-arrow"></span>
 									</div>
