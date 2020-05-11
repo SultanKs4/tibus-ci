@@ -33,6 +33,62 @@
 								<div class="form-group">
 									<span class="form-label">Tanggal</span>
 									<input class="form-control" type="date" required>
+				<div class="col-md-12">
+					<div class="booking-form">
+						<form>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Asal</span>
+										<select class="form-control" name="dari">
+											<option value="">---select---</option>
+											<?php
+											foreach ($terminal as $trm) :
+											?>
+												<option value="<?= $trm['id'] ?>"><?= $trm['kota'] ?>(<?= $trm['nama'] ?>)</option>
+											<?php
+											endforeach;
+											?>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Tujuan</span>
+										<select class="form-control" name="tujuan">
+											<option value="">---select---</option>
+											<?php
+											foreach ($terminal as $trm) :
+											?>
+												<option value="<?= $trm['id'] ?>"><?= $trm['kota'] ?>(<?= $trm['nama'] ?>)</option>
+											<?php
+											endforeach;
+											?>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Tanggal</span>
+										<input class="form-control" type="date" required>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Penumpang</span>
+										<select class="form-control">
+											<?php
+											for ($i = 1; $i < 10; $i++) {
+											?>
+												<option value="<?= $i ?>"><?= $i ?> Orang</option>
+											<?php
+											};
+											?>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
 								</div>
 							</div>
 							<div class="col-sm-6">

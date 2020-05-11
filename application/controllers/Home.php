@@ -19,11 +19,19 @@ class Home extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('terminal_model');
+	}
+
 	public function index()
 	{
 		$data['title'] = 'Home';
+		$data['terminal'] = $this->terminal_model->getallterminal();
 		$this->load->view('template/header');
-		$this->load->view('home/index');
+		$this->load->view('home/index', $data);
 		$this->load->view('template/footer');
 		$this->load->library('session');
 	}
