@@ -15,18 +15,6 @@
                 <tr>
                     <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/bni.png" width="60px" height="20px"></th>
                     <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/logo-bca.png" width="60px" height="20px"></th>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/bri.png" width="60px" height="25px"></th>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/bjb.png" width="60px" height="30px"></th>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/bankdki.png" width="60px" height="25px"></th>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/bankbb.png" width="60px" height="20px"></th>
-                </tr>
-                <tr>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/visa.png" width="60px" height="30px"></th>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/masterc.png" width="60px" height="30px"></th>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/paypal.png" width="60px" height="20px"></th>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/alfa.jpg" width="70px" height="50px"></th>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/indomaret.png" width="60px" height="20px"></th>
-                    <th><input type="checkbox" value=""><img src="<?= base_url(); ?>assets/img/gopay.jpg" width="65px" height="40px"></th>
                 </tr>
             </table>
             <button class="btn-form-pay">Pay</button>

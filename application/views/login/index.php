@@ -5,11 +5,6 @@
                 <form class="login100-form validate-form">
                     <p>
                         <div class="login100-form-avatar">
-                            <img src="<?= base_url(); ?>assets/img/icons/B.jpg" alt="AVATAR">
-                        </div>
-                    </p>
-                    <p>
-                        <div class="login100-form-avatar">
                             <img src="<?= base_url(); ?>assets/img/profile.jpg" alt="AVATAR">
                         </div>
                     </p>
@@ -38,14 +33,7 @@
                             <a href="#">Login</a>
                         </button>
                     </div>
-
                     <div class="text-center w-full p-t-25 p-b-230">
-                        <a href="#" class="txt1">
-                            Forgot Username / Password?
-                        </a>
-                    </div>
-
-                    <div class="text-center w-full">
                         <a class="txt1" href="<?= base_url(); ?>register">
                             Create new account
                             <i class="fa fa-long-arrow-right"></i>
