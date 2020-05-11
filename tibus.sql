@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 04, 2020 at 06:12 AM
+-- Generation Time: May 10, 2020 at 02:48 AM
 -- Server version: 10.4.12-MariaDB
 -- PHP Version: 7.4.5
 
@@ -44,7 +44,35 @@ CREATE TABLE `akun` (
 --
 
 INSERT INTO `akun` (`id`, `email`, `nama_depan`, `nama_belakang`, `telpon`, `password`, `id_level`) VALUES
-(1, 'sultangendut@gmail.com', 'Sultan', 'Achmad Qum Masykuro NS', '085155338303', 'test123', 2);
+(1, 'sultangendut@gmail.com', 'Sultan', 'Achmad Qum Masykuro NS', '085155338303', 'test123', 2),
+(2, 'lala@gmail.com', 'lala', 'lili', '2193129391293', 'adsjdaskjdask', 1),
+(3, 'natlus@gmail.com', 'hihi', 'huhu', '628921832134', '$2y$10$NQ3PlBMiwpHoqHI5NqjCRukTAEmPJRGlAVC5dH6zcewCTk18xutJC', 1),
+(4, 'lelele@gmail.com', 'hihi', 'huhu', '628921832134', 'daef4953b9783365cad6615223720506cc46c5167cd16ab500fa597aa08ff964eb24fb19687f34d7665f778fcb6c5358fc0a5b81e1662cf90f73a2671c53f991', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `keys`
+--
+
+CREATE TABLE `keys` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `key` varchar(255) NOT NULL,
+  `level` int(2) NOT NULL,
+  `ignore_limits` tinyint(1) NOT NULL DEFAULT 0,
+  `is_private_key` tinyint(1) NOT NULL DEFAULT 0,
+  `ip_addresses` text DEFAULT NULL,
+  `date_created` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `keys`
+--
+
+INSERT INTO `keys` (`id`, `user_id`, `key`, `level`, `ignore_limits`, `is_private_key`, `ip_addresses`, `date_created`) VALUES
+(1, 0, '3efd7b6dd8d0fd2a47f618b94d53a9ce1b246d25', 0, 0, 0, NULL, 20200505),
+(2, 0, 'qwe123', 0, 0, 0, NULL, 20200509);
 
 -- --------------------------------------------------------
 
@@ -248,6 +276,12 @@ ALTER TABLE `akun`
   ADD KEY `fkLevel` (`id_level`);
 
 --
+-- Indexes for table `keys`
+--
+ALTER TABLE `keys`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `level`
 --
 ALTER TABLE `level`
@@ -319,7 +353,13 @@ ALTER TABLE `tiket_booking`
 -- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `keys`
+--
+ALTER TABLE `keys`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `level`
