@@ -32,7 +32,7 @@ class Method extends CI_Controller
         } else {
             $this->method_model->tambahdatamethod();
             $this->session->set_flashdata('flash-data', ' ditambahkan');
-            redirect('admin_method', 'refresh');
+            redirect('admin/method', 'refresh');
         }
     }
 
@@ -40,7 +40,7 @@ class Method extends CI_Controller
     {
         $this->method_model->hapusdatamethod($id);
         $this->session->set_flashdata('flash-data', ' dihapus');
-        redirect('admin_method', 'refresh');
+        redirect('admin/method', 'refresh');
     }
 
     public function edit($id)
@@ -57,7 +57,7 @@ class Method extends CI_Controller
         } else {
             $this->method_model->ubahdatamethod(); // JS2 B3 no 1
             $this->session->set_flashdata('flash-data', ' diedit');
-            redirect('Admin_method', 'refresh');
+            redirect('Admin/method', 'refresh');
         }
     }
 }

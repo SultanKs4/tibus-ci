@@ -35,7 +35,7 @@ class Terminal extends CI_Controller
         } else {
             $this->terminal_model->tambahdataterminal();
             $this->session->set_flashdata('flash-data', ' ditambahkan');
-            redirect('admin_terminal', 'refresh');
+            redirect('admin/terminal', 'refresh');
         }
     }
 
@@ -43,7 +43,7 @@ class Terminal extends CI_Controller
     {
         $this->terminal_model->hapusdataterminal($id);
         $this->session->set_flashdata('flash-data', ' dihapus');
-        redirect('admin_terminal', 'refresh');
+        redirect('admin/terminal', 'refresh');
     }
 
     public function edit($id)
@@ -62,7 +62,7 @@ class Terminal extends CI_Controller
         } else {
             $this->terminal_model->ubahdataterminal(); // JS2 B3 no 1
             $this->session->set_flashdata('flash-data', ' diedit');
-            redirect('Admin_terminal', 'refresh');
+            redirect('Admin/terminal', 'refresh');
         }
     }
 }

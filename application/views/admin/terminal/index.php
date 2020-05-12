@@ -9,7 +9,7 @@
                             <p class="card-category col-md-9">Data Terminal</p>
                             <div class="row mt-4 float-right mr-5 col-md-2">
                                 <div class="col-md-6">
-                                    <a href="<?= base_url(); ?>admin_terminal/tambah" class="btn btn-primary">Tambah Data</a>
+                                    <a href="<?= base_url(); ?>admin/terminal/tambah" class="btn btn-primary">Tambah Data</a>
                                 </div>
                             </div>
                         </div>
@@ -31,8 +31,8 @@
                                         <td><?= $trm['kota']; ?></td>
                                         <td><?= $trm['alamat']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>admin_terminal/hapus/<?= $trm['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
-                                            <a href="<?= base_url(); ?>admin_terminal/edit/<?= $trm['id']; ?> " class="badge badge-success float-right">Edit</a>
+                                            <a href="<?= base_url(); ?>admin/terminal/hapus/<?= $trm['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
+                                            <a href="<?= base_url(); ?>admin/terminal/edit/<?= $trm['id']; ?> " class="badge badge-success float-right">Edit</a>
                                         </td>
                                     </tr>
                                 <?php

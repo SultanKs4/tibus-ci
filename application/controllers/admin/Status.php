@@ -32,7 +32,7 @@ class Status extends CI_Controller
         } else {
             $this->status_model->tambahdatastatus();
             $this->session->set_flashdata('flash-data', ' ditambahkan');
-            redirect('admin_status', 'refresh');
+            redirect('admin/status', 'refresh');
         }
     }
 
@@ -40,7 +40,7 @@ class Status extends CI_Controller
     {
         $this->status_model->hapusdatastatus($id);
         $this->session->set_flashdata('flash-data', ' dihapus');
-        redirect('admin_status', 'refresh');
+        redirect('admin/status', 'refresh');
     }
 
     public function edit($id)
@@ -57,7 +57,7 @@ class Status extends CI_Controller
         } else {
             $this->status_model->ubahdatastatus(); // JS2 B3 no 1
             $this->session->set_flashdata('flash-data', ' diedit');
-            redirect('Admin_status', 'refresh');
+            redirect('Admin/status', 'refresh');
         }
     }
 }
