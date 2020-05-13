@@ -68,12 +68,12 @@
                             <p>Payment Method</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>admin/status">
                             <i class="nc-icon nc-check-2"></i>
                             <p>Payment Status</p>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>admin/booking">
                             <i class="nc-icon nc-cart-simple"></i>
@@ -113,7 +113,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
+                                <a class="nav-link" href="<?= base_url() ?>login/logout">
                                     <span class="no-icon">Log out</span>
                                 </a>
                             </li>

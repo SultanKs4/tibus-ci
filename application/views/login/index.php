@@ -1,3 +1,4 @@
+<?= form_open('login/proses_login'); ?>
 <body>
     <div class="limiter">
         <div class="container-login100" style="background-image: url('http://localhost/tibus-ci/assets/img/img-01.jpg');">
@@ -12,8 +13,8 @@
                         Welcome
                     </span>
 
-                    <div class="wrap-input100 validate-input m-b-10" data-validate="Username is required">
-                        <input class="input100" type="text" name="username" placeholder="Username">
+                    <div class="wrap-input100 validate-input m-b-10" data-validate="Email is required">
+                        <input class="input100" type="email" name="email" placeholder="Email">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-user"></i>
@@ -21,7 +22,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-10" data-validate="Password is required">
-                        <input class="input100" type="password" name="pass" placeholder="Password">
+                        <input class="input100" type="password" name="password" placeholder="Password">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock"></i>
@@ -29,7 +30,7 @@
                     </div>
 
                     <div class="container-login100-form-btn p-t-10">
-                        <button class="login100-form-btn">
+                        <button class="login100-form-btn" type="submit">
                             <a href="#">Login</a>
                         </button>
                     </div>
@@ -43,3 +44,4 @@
             </div>
         </div>
     </div>
+    <?= form_close(); ?>
