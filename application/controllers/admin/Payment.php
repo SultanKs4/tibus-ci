@@ -47,7 +47,7 @@ class Payment extends CI_Controller
     {
         $this->payment_model->hapusdatapayment($id);
         $this->session->set_flashdata('flash-data', ' dihapus');
-        redirect('admin_payment', 'refresh');
+        redirect('admin/payment', 'refresh');
     }
 
     public function edit($id)
@@ -71,7 +71,7 @@ class Payment extends CI_Controller
         } else {
             $this->payment_model->ubahdatapayment(); // JS2 B3 no 1
             $this->session->set_flashdata('flash-data', ' diedit');
-            redirect('Admin_payment', 'refresh');
+            redirect('Admin/payment', 'refresh');
         }
     }
     public function detail($id)

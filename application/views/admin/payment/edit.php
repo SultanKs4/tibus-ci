@@ -17,7 +17,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Akun</label>
-                                            <select name="id_akun" class="form-control">
+                                            <select name="id_akun" class="form-control" disabled>
                                                 <?php
                                                 foreach ($akun as $akn) :
                                                     if ($pym['akun'] == $akn['email']) :
@@ -39,7 +39,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Kode Booking</label>
-                                            <select name="kode_booking" class="form-control">
+                                            <select name="kode_booking" class="form-control" disabled>
                                                 <?php
                                                 foreach ($booking as $bkg) :
                                                     if ($pym['kode_booking'] == $bkg['name']) :
@@ -61,7 +61,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Total</label>
-                                            <input name="total" type="number" class="form-control" placeholder="Total" value="<?= $pym['total']; ?>">
+                                            <input name="total" type="number" class="form-control" placeholder="Total" value="<?= $pym['total']; ?>" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Method</label>
-                                            <select name="metode_bayar" class="form-control">
+                                            <select name="metode_bayar" class="form-control" disabled>
                                                 <?php
                                                 foreach ($method as $mth) :
                                                     if ($pym['method'] == $mth['name']) :
@@ -91,7 +91,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Bukti Bayar</label>
-                                            <input name="bukti_bayar" type="text" class="form-control" placeholder="Nama File" value="<?= $pym['bukti_bayar']; ?>">
+                                            <input name="bukti_bayar" type="text" class="form-control" placeholder="Nama File" value="<?= $pym['bukti_bayar']; ?>" disabled>
                                         </div>
                                     </div>
                                 </div>

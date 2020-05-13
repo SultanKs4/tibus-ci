@@ -44,7 +44,7 @@ class Trayek extends CI_Controller
         } else {
             $this->trayek_model->tambahdatatrayek();
             $this->session->set_flashdata('flash-data', ' ditambahkan');
-            redirect('admin_trayek', 'refresh');
+            redirect('admin/trayek', 'refresh');
         }
     }
 
@@ -52,7 +52,7 @@ class Trayek extends CI_Controller
     {
         $this->trayek_model->hapusdatatrayek($id);
         $this->session->set_flashdata('flash-data', ' dihapus');
-        redirect('admin_trayek', 'refresh');
+        redirect('admin/trayek', 'refresh');
     }
 
     public function edit($id)
@@ -78,7 +78,7 @@ class Trayek extends CI_Controller
         } else {
             $this->trayek_model->ubahdatatrayek(); // JS2 B3 no 1
             $this->session->set_flashdata('flash-data', ' diedit');
-            redirect('Admin_trayek', 'refresh');
+            redirect('Admin/trayek', 'refresh');
         }
     }
     public function detail($id)

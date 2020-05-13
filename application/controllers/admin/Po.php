@@ -32,7 +32,7 @@ class Po extends CI_Controller
         } else {
             $this->po_model->tambahdatapo();
             $this->session->set_flashdata('flash-data', ' ditambahkan');
-            redirect('admin_po', 'refresh');
+            redirect('admin/po', 'refresh');
         }
     }
 
@@ -40,7 +40,7 @@ class Po extends CI_Controller
     {
         $this->po_model->hapusdatapo($id);
         $this->session->set_flashdata('flash-data', ' dihapus');
-        redirect('admin_po', 'refresh');
+        redirect('admin/po', 'refresh');
     }
 
     public function edit($id)
@@ -57,7 +57,7 @@ class Po extends CI_Controller
         } else {
             $this->po_model->ubahdatapo(); // JS2 B3 no 1
             $this->session->set_flashdata('flash-data', ' diedit');
-            redirect('Admin_po', 'refresh');
+            redirect('admin/po', 'refresh');
         }
     }
 }

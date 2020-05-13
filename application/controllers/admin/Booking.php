@@ -40,7 +40,7 @@ class Booking extends CI_Controller
     {
         $this->booking_model->hapusdatabooking($id);
         $this->session->set_flashdata('flash-data', ' dihapus');
-        redirect('admin_booking', 'refresh');
+        redirect('admin/booking', 'refresh');
     }
 
     public function edit($id)
@@ -57,7 +57,7 @@ class Booking extends CI_Controller
         } else {
             $this->booking_model->ubahdatabooking(); // JS2 B3 no 1
             $this->session->set_flashdata('flash-data', ' diedit');
-            redirect('Admin_booking', 'refresh');
+            redirect('Admin/booking', 'refresh');
         }
     }
 }
