@@ -56,9 +56,12 @@ class tiket extends CI_Controller
         $data['akun'] = $this->akun_model->getallakun();
         $data['booking'] = $this->booking_model->getallbooking();
 
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('kota', 'Kota', 'required');
-        $this->form_validation->set_rules('alamat', 'Alamat', 'required');
+        $this->form_validation->set_rules('kode_booking', 'Kode_booking', 'required');
+        $this->form_validation->set_rules('nama_penumpang', 'Nama_penumpang', 'required');
+        $this->form_validation->set_rules('no_ktp_penumpang', 'No_ktp_penumpang', 'required');
+        $this->form_validation->set_rules('no_duduk', 'No_duduk', 'required');
+        $this->form_validation->set_rules('id_akun', 'id_akun', 'required');
+        $this->form_validation->set_rules('id_trayek', 'Id_trayek', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('admin/template/header', $data);
