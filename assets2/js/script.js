@@ -9,7 +9,7 @@ var details = [];
 var $cart = $('#selected-seats'),
     $counter = $('#counter'),
     $total = $('#total'),
-    sc = $('#seat-realseat').seatCharts({
+    sc = $('#seat-map').seatCharts({
         map: [
             'ee_ee',
             'ee_ee',
@@ -32,7 +32,7 @@ var $cart = $('#selected-seats'),
         },
         naming: {
             top: false,
-            getLabel: function (character, row, column) {
+            getLabel: function(character, row, column) {
                 return firstSeatLabel++;
             },
         },
@@ -44,14 +44,14 @@ var $cart = $('#selected-seats'),
         //         ['f', 'unavailable', 'Already Booked']
         //     ]
         // },
-        click: function () {
+        click: function() {
             if (this.status() == 'available') {
                 $(event.target).toggleClass('animated rubberBand')
-                //let's create a new <li> which we'll add to the cart items
+                    //let's create a new <li> which we'll add to the cart items
                 $('<li class="p-b-4">' + this.data().category + ' Seat # ' +
-                    this.settings.label + ': <b>Ksh ' + this.data().price +
-                    '</b> <a href="javascript:void(0);"' +
-                    ' class="cancel-cart-item btn btn-danger btn-sm"><i class="fa fa-trash"></i> cancel</a></li>')
+                        this.settings.label + ': <b>Ksh ' + this.data().price +
+                        '</b> <a href="javascript:void(0);"' +
+                        ' class="cancel-cart-item btn btn-danger btn-sm"><i class="fa fa-trash"></i> cancel</a></li>')
                     .attr('id', 'cart-item-' + this.settings.id)
                     .data('seatId', this.settings.id)
                     .appendTo($cart);
@@ -72,7 +72,7 @@ var $cart = $('#selected-seats'),
                 return 'selected';
             } else if (this.status() == 'selected') {
                 $(event.target).toggleClass('animated rubberBand')
-                //update the counter
+                    //update the counter
                 $counter.text(sc.find('selected').length - 1);
                 //and total
                 $total.text(recalculateTotal(sc) - this.data().price);
@@ -80,7 +80,7 @@ var $cart = $('#selected-seats'),
                 //remove the item from our cart
                 $('#cart-item-' + this.settings.id).remove();
                 no = this.settings.label;
-                var filtered = details.filter(function (item) {
+                var filtered = details.filter(function(item) {
                     return item.seatNo != no;
                 });
                 details = filtered;
@@ -97,17 +97,17 @@ var $cart = $('#selected-seats'),
     });
 
 let recalculateTotal = sc => {
-    var total = 0;
+        var total = 0;
 
-    //basically find every selected seat and sum its price
-    sc.find('selected').each(function () {
-        total += this.data().price;
-    });
+        //basically find every selected seat and sum its price
+        sc.find('selected').each(function() {
+            total += this.data().price;
+        });
 
-    return total;
-}
-//this will handle "[cancel]" link clicks
-$('#selected-seats').on('click', '.cancel-cart-item', function () {
+        return total;
+    }
+    //this will handle "[cancel]" link clicks
+$('#selected-seats').on('click', '.cancel-cart-item', function() {
     $('#' + sc.get($(this).parents('li:first').data('seatId')).settings.id)
         .toggleClass('animated rubberBand');
     //let's just trigger Click event on the appropriate seat, so we don't have to repeat the logic here
@@ -115,15 +115,15 @@ $('#selected-seats').on('click', '.cancel-cart-item', function () {
 });
 
 
-let booked_seats = function (bus_id) {
+let booked_seats = function(bus_id) {
     $.ajax({
         method: 'GET', //https://examinationcomplaint.theschemaqhigh.co.ke/HCI/api/book/
         url: 'api/book.php?bus_id=' + $.trim(bus_id) + '&booked_seats',
-        success: function (data) {
+        success: function(data) {
             sc.find('unavailable').status('available');
             data.forEach((element => sc.get([sc.seatIds[element - 1]]).status('unavailable')))
         },
-        error: function (data) {
+        error: function(data) {
             console.log(data)
         }
     });
