@@ -44,7 +44,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="<?= base_url(); ?>seat">Seat</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Ticket</a>
