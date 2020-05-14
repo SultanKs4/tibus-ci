@@ -7,7 +7,12 @@
                         <h4 class="card-title">Add trayek</h4>
                     </div>
                     <div class="card-body">
-                        <?= validation_errors() ?>
+                        <?php if (validation_errors()) : ?>
+                            <div class="alert alert-danger alert-dismissable" role="alert">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <?= validation_errors(); ?>
+                            </div>
+                        <?php endif ?>
                         <form method="post" action="">
                             <div class="row">
                                 <div class="col-md-12">
