@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 10, 2020 at 02:48 AM
+-- Generation Time: May 14, 2020 at 06:14 AM
 -- Server version: 10.4.12-MariaDB
 -- PHP Version: 7.4.5
 
@@ -29,6 +29,7 @@ USE `tibus`;
 -- Table structure for table `akun`
 --
 
+DROP TABLE IF EXISTS `akun`;
 CREATE TABLE `akun` (
   `id` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -36,18 +37,20 @@ CREATE TABLE `akun` (
   `nama_belakang` varchar(50) NOT NULL,
   `telpon` varchar(20) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `id_level` int(11) NOT NULL
+  `id_level` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `akun`
 --
 
-INSERT INTO `akun` (`id`, `email`, `nama_depan`, `nama_belakang`, `telpon`, `password`, `id_level`) VALUES
-(1, 'sultangendut@gmail.com', 'Sultan', 'Achmad Qum Masykuro NS', '085155338303', 'test123', 2),
-(2, 'lala@gmail.com', 'lala', 'lili', '2193129391293', 'adsjdaskjdask', 1),
-(3, 'natlus@gmail.com', 'hihi', 'huhu', '628921832134', '$2y$10$NQ3PlBMiwpHoqHI5NqjCRukTAEmPJRGlAVC5dH6zcewCTk18xutJC', 1),
-(4, 'lelele@gmail.com', 'hihi', 'huhu', '628921832134', 'daef4953b9783365cad6615223720506cc46c5167cd16ab500fa597aa08ff964eb24fb19687f34d7665f778fcb6c5358fc0a5b81e1662cf90f73a2671c53f991', 1);
+INSERT INTO `akun` (`id`, `email`, `nama_depan`, `nama_belakang`, `telpon`, `password`, `id_level`, `created_at`, `updated_at`) VALUES
+(1, 'sultangendut@gmail.com', 'Sultan', 'Achmad Qum Masykuro NS', '085155338303', 'test123', 2, NULL, NULL),
+(2, 'lala@gmail.com', 'lala', 'lili', '2193129391293', 'adsjdaskjdask', 1, NULL, NULL),
+(3, 'natlus@gmail.com', 'hihi', 'huhu', '628921832134', '$2y$10$NQ3PlBMiwpHoqHI5NqjCRukTAEmPJRGlAVC5dH6zcewCTk18xutJC', 1, NULL, NULL),
+(4, 'lelele@gmail.com', 'hihi', 'huhu', '628921832134', 'daef4953b9783365cad6615223720506cc46c5167cd16ab500fa597aa08ff964eb24fb19687f34d7665f778fcb6c5358fc0a5b81e1662cf90f73a2671c53f991', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -55,6 +58,7 @@ INSERT INTO `akun` (`id`, `email`, `nama_depan`, `nama_belakang`, `telpon`, `pas
 -- Table structure for table `keys`
 --
 
+DROP TABLE IF EXISTS `keys`;
 CREATE TABLE `keys` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -80,6 +84,7 @@ INSERT INTO `keys` (`id`, `user_id`, `key`, `level`, `ignore_limits`, `is_privat
 -- Table structure for table `level`
 --
 
+DROP TABLE IF EXISTS `level`;
 CREATE TABLE `level` (
   `id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL
@@ -100,6 +105,7 @@ INSERT INTO `level` (`id`, `name`) VALUES
 -- Table structure for table `payment`
 --
 
+DROP TABLE IF EXISTS `payment`;
 CREATE TABLE `payment` (
   `id` int(11) NOT NULL,
   `id_akun` int(11) NOT NULL,
@@ -123,18 +129,21 @@ INSERT INTO `payment` (`id`, `id_akun`, `kode_booking`, `total`, `metode_bayar`,
 -- Table structure for table `payment_method`
 --
 
+DROP TABLE IF EXISTS `payment_method`;
 CREATE TABLE `payment_method` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL
+  `name` varchar(50) NOT NULL,
+  `no` varchar(30) NOT NULL,
+  `an` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `payment_method`
 --
 
-INSERT INTO `payment_method` (`id`, `name`) VALUES
-(1, 'Bank Transfer - BCA'),
-(2, 'Bank Transfer - BNI');
+INSERT INTO `payment_method` (`id`, `name`, `no`, `an`) VALUES
+(1, 'Bank Transfer - BCA', '389129381894', 'PT. Tibus Tbk'),
+(2, 'Bank Transfer - BNI', '3112674412321', 'PT. Tibus Tbk');
 
 -- --------------------------------------------------------
 
@@ -142,6 +151,7 @@ INSERT INTO `payment_method` (`id`, `name`) VALUES
 -- Table structure for table `payment_status`
 --
 
+DROP TABLE IF EXISTS `payment_status`;
 CREATE TABLE `payment_status` (
   `id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL
@@ -162,6 +172,7 @@ INSERT INTO `payment_status` (`id`, `name`) VALUES
 -- Table structure for table `po`
 --
 
+DROP TABLE IF EXISTS `po`;
 CREATE TABLE `po` (
   `id` int(11) NOT NULL,
   `nama` varchar(200) NOT NULL
@@ -181,6 +192,7 @@ INSERT INTO `po` (`id`, `nama`) VALUES
 -- Table structure for table `po_trayek`
 --
 
+DROP TABLE IF EXISTS `po_trayek`;
 CREATE TABLE `po_trayek` (
   `id` int(11) NOT NULL,
   `id_po` int(11) NOT NULL,
@@ -190,16 +202,17 @@ CREATE TABLE `po_trayek` (
   `jam_tiba` time NOT NULL,
   `tanggal_berangkat` date NOT NULL,
   `tanggal_tiba` date NOT NULL,
-  `harga` int(11) NOT NULL
+  `harga` int(11) NOT NULL,
+  `sisa_kursi` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `po_trayek`
 --
 
-INSERT INTO `po_trayek` (`id`, `id_po`, `dari`, `tujuan`, `jam_berangkat`, `jam_tiba`, `tanggal_berangkat`, `tanggal_tiba`, `harga`) VALUES
-(1, 1, 1, 2, '09:06:00', '10:20:00', '2020-04-30', '2020-04-30', 25000),
-(2, 1, 2, 1, '10:37:00', '11:40:00', '2020-04-30', '2020-04-30', 25000);
+INSERT INTO `po_trayek` (`id`, `id_po`, `dari`, `tujuan`, `jam_berangkat`, `jam_tiba`, `tanggal_berangkat`, `tanggal_tiba`, `harga`, `sisa_kursi`) VALUES
+(1, 1, 1, 2, '09:06:00', '10:20:00', '2020-04-30', '2020-04-30', 25000, '10'),
+(2, 1, 2, 1, '10:37:00', '11:40:00', '2020-04-30', '2020-04-30', 25000, '15');
 
 -- --------------------------------------------------------
 
@@ -207,6 +220,7 @@ INSERT INTO `po_trayek` (`id`, `id_po`, `dari`, `tujuan`, `jam_berangkat`, `jam_
 -- Table structure for table `terminal`
 --
 
+DROP TABLE IF EXISTS `terminal`;
 CREATE TABLE `terminal` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
@@ -228,6 +242,7 @@ INSERT INTO `terminal` (`id`, `nama`, `kota`, `alamat`) VALUES
 -- Table structure for table `tiket`
 --
 
+DROP TABLE IF EXISTS `tiket`;
 CREATE TABLE `tiket` (
   `id` int(11) NOT NULL,
   `kode_booking` int(11) NOT NULL,
@@ -243,7 +258,7 @@ CREATE TABLE `tiket` (
 --
 
 INSERT INTO `tiket` (`id`, `kode_booking`, `nama_penumpang`, `no_ktp_penumpang`, `no_duduk`, `id_akun`, `id_trayek`) VALUES
-(1, 1, 'Mrs. Tifa Lockhart', '35017823673123', 'B8', 1, 1);
+(1, 1, 'Mrs. Tifa Lockhart', '35017823673123', '8', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -251,6 +266,7 @@ INSERT INTO `tiket` (`id`, `kode_booking`, `nama_penumpang`, `no_ktp_penumpang`,
 -- Table structure for table `tiket_booking`
 --
 
+DROP TABLE IF EXISTS `tiket_booking`;
 CREATE TABLE `tiket_booking` (
   `id` int(11) NOT NULL,
   `name` int(30) NOT NULL
