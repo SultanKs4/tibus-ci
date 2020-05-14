@@ -28,10 +28,10 @@ class Trayek extends CI_Controller
         $data['terminal'] = $this->terminal_model->getallterminal();
         $data['title'] = 'Tambah trayek';
         $this->form_validation->set_rules('id_po', 'Id_po', 'required');
-        $this->form_validation->set_rules('dari', 'Dari', 'required|numeric');
-        $this->form_validation->set_rules('tujuan', 'Tujuan', 'required|numeric');
-        $this->form_validation->set_rules('jam_berangkat', 'Jam_berangkat', 'required');
-        $this->form_validation->set_rules('jam_tiba', 'Jam_tiba', 'required');
+        $this->form_validation->set_rules('dari', 'Dari', 'required|numeric|differs[tujuan]');
+        $this->form_validation->set_rules('tujuan', 'Tujuan', 'required|numeric|differs[dari]');
+        $this->form_validation->set_rules('jam_berangkat', 'Jam_berangkat', 'required|differs[jam_tiba]');
+        $this->form_validation->set_rules('jam_tiba', 'Jam_tiba', 'required|differs[jam_berangkat]');
         $this->form_validation->set_rules('tanggal_berangkat', 'Tanggal_berangkat', 'required');
         $this->form_validation->set_rules('tanggal_tiba', 'Tanggal_tiba', 'required');
         $this->form_validation->set_rules('harga', 'Harga', 'required|numeric');
