@@ -62,7 +62,7 @@ class tiket_model extends CI_Model
         $data = [
             "kode_booking" => $this->input->post('kode_booking', true),
             "nama_penumpang" => $this->input->post('nama_penumpang', true),
-            "no_ktp_pengguna" => $this->input->post('no_ktp_pengguna', true),
+            "no_ktp_penumpang" => $this->input->post('no_ktp_penumpang', true),
             "no_duduk" => $this->input->post('no_duduk', true),
             "id_akun" => $this->input->post('id_akun', true),
             "id_trayek" => $this->input->post('id_trayek', true),

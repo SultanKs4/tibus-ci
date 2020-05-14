@@ -17,7 +17,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Kode Booking</label>
-                                            <select name="name" class="form-control">
+                                            <select name="kode_booking" class="form-control">
                                                 <?php
                                                 foreach ($booking as $bkg) :
                                                     if ($tkt['kode_booking'] == $bkg['id']) :
@@ -62,8 +62,30 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <label>Email</label>
+                                            <select name="id_akun" class="form-control">
+                                                <?php
+                                                foreach ($akun as $akn) :
+                                                    if ($tkt['kode_booking'] == $bkg['id']) :
+                                                ?>
+                                                        <option value="<?= $akn['id'] ?>" selected><?= $akn['email'] ?></option>
+                                                    <?php
+                                                    else :
+                                                    ?>
+                                                        <option value="<?= $akn['id'] ?>"><?= $akn['email'] ?></option>
+                                                <?php
+                                                    endif;
+                                                endforeach;
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
                                             <label>Trayek</label>
-                                            <input name="id_trayek" type="number" class="form-control" placeholder="Trayek" value="<?= $tkt['id_trayek']; ?>" disabled>
+                                            <input name="id_trayek" type="number" class="form-control" placeholder="Trayek" value="<?= $tkt['id_trayek']; ?>" readonly>
                                         </div>
                                     </div>
                                 </div>

@@ -7,11 +7,6 @@
                         <h4 class="card-title">Tiket</h4>
                         <div class="row">
                             <p class="card-category col-md-9">Data tiket</p>
-                            <div class="row mt-4 float-right mr-5 col-md-2">
-                                <div class="col-md-6">
-                                    <a href="<?= base_url(); ?>admin/tiket/tambah" class="btn btn-primary">Tambah Data</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="card-body table-full-width table-responsive">

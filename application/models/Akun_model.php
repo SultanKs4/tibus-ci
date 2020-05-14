@@ -39,6 +39,25 @@ class Akun_model extends CI_Model
         $result = json_decode($response->getBody()->getContents(), true);
         return $result['data'];
     }
+
+    public function tambahdataakun()
+    {
+        $data = [
+            "email" => $this->input->post('email', true),
+            "nama_depan" => $this->input->post('nama_depan', true),
+            "nama_belakang" => $this->input->post('nama_belakang', true),
+            "telpon" => $this->input->post('telpon', true),
+            "password" => $this->input->post('password', true),
+            "id_level" => $this->input->post('id_level', true),
+            'tkn' => 'qwe123'
+        ];
+        $response = $this->_client->request('POST', 'akun', [
+            'form_params' => $data
+        ]);
+
+        $result = json_decode($response->getBody()->getContents(), true);
+        return $result;
+    }
 }
     
     /* End of file akun_model.php */
