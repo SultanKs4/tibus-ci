@@ -8,8 +8,6 @@
                             <div class="front-indicator">
                                 <img src="<?= base_url(); ?>assets2/images/driver.png" alt="Driver" height="">
                             </div>
-                            <div id="seat-realseat">
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-xl-6 col-sm-4 col-md-5">
