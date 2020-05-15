@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="card-body table-full-width table-responsive">
-                        <table class="table table-hover table-striped">
+                        <table class="table table-hover table-striped" id="list">
                             <thead>
                                 <th>Nama</th>
                                 <th>Action</th>
@@ -27,7 +27,7 @@
                                     <tr>
                                         <td><?= $mth['name']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>admin/method/hapus/<?= $mth['id']; ?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
+                                            <a href="<?= base_url(); ?>admin/method/hapus/<?= $mth['id']; ?>" class="badge badge-danger float-right mr-1" onclick="return confirm('Yakin Data ini akan dihapus')">Hapus</a>
                                             <a href="<?= base_url(); ?>admin/method/edit/<?= $mth['id']; ?> " class="badge badge-success float-right">Edit</a>
                                         </td>
                                     </tr>
