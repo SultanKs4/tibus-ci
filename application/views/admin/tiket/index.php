@@ -10,7 +10,7 @@
                         </div>
                     </div>
                     <div class="card-body table-full-width table-responsive">
-                        <table class="table table-hover table-striped">
+                        <table class="table table-hover table-striped" id="list">
                             <thead>
                                 <th>Kode Booking</th>
                                 <th>Nama Penumpang</th>
