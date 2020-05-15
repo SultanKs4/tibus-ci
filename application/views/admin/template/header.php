@@ -34,7 +34,7 @@
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>admin/dashboard">
-                            <i class="nc-icon nc-chart-pie-35"></i>
+                            <i class="nc-icon nc-badge"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
@@ -92,6 +92,12 @@
                             <p>Payment</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>login/logout">
+                            <i class="nc-icon nc-stre-left"></i>
+                            <p>Logout</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -105,20 +111,6 @@
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <span class="no-icon">Account</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= base_url() ?>login/logout">
-                                    <span class="no-icon">Log out</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
             <!-- End Navbar -->
