@@ -10,7 +10,7 @@ class Payment extends CI_Controller
         parent::__construct();
         $this->load->model('payment_model');
         $this->load->model('akun_model');
-        $this->load->model('booking_model');
+        $this->load->model('tiket_model');
         $this->load->model('status_model');
         $this->load->model('method_model');
 
@@ -59,11 +59,10 @@ class Payment extends CI_Controller
         $data['title'] = 'Edit Data payment';
         $data['payment'] = $this->payment_model->getpaymentbyid($id);
         $data['akun'] = $this->akun_model->getallakun();
-        $data['booking'] = $this->booking_model->getallbooking();
+        $data['tiket'] = $this->tiket_model->getalltiket();
         $data['method'] = $this->method_model->getallmethod();
         $data['status'] = $this->status_model->getallstatus();
         $this->form_validation->set_rules('id_akun', 'Id_akun', 'required');
-        $this->form_validation->set_rules('kode_booking', 'Kode_booking', 'required|numeric');
         $this->form_validation->set_rules('total', 'Total', 'required|numeric');
         $this->form_validation->set_rules('metode_bayar', 'Metode_bayar', 'required|numeric');
         $this->form_validation->set_rules('status', 'Status', 'required');

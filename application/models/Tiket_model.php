@@ -60,12 +60,13 @@ class tiket_model extends CI_Model
     public function ubahdatatiket() // JS2 B3 no 3
     {
         $data = [
-            "kode_booking" => $this->input->post('kode_booking', true),
             "nama_penumpang" => $this->input->post('nama_penumpang', true),
             "no_ktp_penumpang" => $this->input->post('no_ktp_penumpang', true),
             "no_duduk" => $this->input->post('no_duduk', true),
             "id_akun" => $this->input->post('id_akun', true),
             "id_trayek" => $this->input->post('id_trayek', true),
+            "id_payment" => $this->input->post('id_payment', true),
+            "id_duduk" => $this->input->post('id_duduk', true),
             "id" => $this->input->post('id', true),
             'tkn' => 'qwe123'
         ];

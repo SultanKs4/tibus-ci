@@ -13,7 +13,6 @@
                         <table class="table table-hover table-striped" id="list">
                             <thead>
                                 <th>Akun</th>
-                                <th>Kode Booking</th>
                                 <th>Bukti Transfer</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -24,7 +23,6 @@
                                 ?>
                                     <tr>
                                         <td><?= $pym['akun']; ?></td>
-                                        <td><?= $pym['kode_booking']; ?></td>
                                         <td>
                                             <?php if ($pym['bukti_bayar'] == null) : ?>
                                                 <p>NULL</p>

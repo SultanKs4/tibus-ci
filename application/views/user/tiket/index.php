@@ -12,7 +12,6 @@
                     <div class="card-body table-full-width table-responsive">
                         <table class="table table-hover table-striped">
                             <thead>
-                                <th>Kode Booking</th>
                                 <th>Nama Penumpang</th>
                                 <th>No KTP</th>
                                 <th>No Duduk</th>
@@ -20,28 +19,39 @@
                                 <th>Trayek</th>
                                 <th>Jam Berangkat</th>
                                 <th>Tanggal Berangkat</th>
+                                <th>Bukti Bayar</th>
                             </thead>
                             <tbody>
                                 <?php
                                 foreach ($tiket as $tkt) :
                                     foreach ($akun as $akn) :
                                         foreach ($trayek as $try) :
-                                            if ($tkt['email'] == $akn['email']) :
-                                                if ($tkt['id_trayek'] == $try['id']) :
+                                            foreach ($payment as $pym) :
+                                                if ($tkt['email'] == $akn['email']) :
+                                                    if ($tkt['id_trayek'] == $try['id']) :
+                                                        if ($tkt['id_payment'] == $pym['id']) :
                                 ?>
-                                                    <tr>
-                                                        <td><?= $tkt['name']; ?></td>
-                                                        <td><?= $tkt['nama_penumpang']; ?></td>
-                                                        <td><?= $tkt['no_ktp_penumpang']; ?></td>
-                                                        <td><?= $tkt['no_duduk']; ?></td>
-                                                        <td><?= $tkt['email']; ?></td>
-                                                        <td><?= $try['dari'] ?> -> <?= $try['tujuan'] ?></td>
-                                                        <td><?= $try['jam_berangkat'] ?></td>
-                                                        <td><?= $try['tanggal_berangkat'] ?></td>
-                                                    </tr>
+                                                            <tr>
+                                                                <td><?= $tkt['nama_penumpang']; ?></td>
+                                                                <td><?= $tkt['no_ktp_penumpang']; ?></td>
+                                                                <td><?= $tkt['no_duduk']; ?></td>
+                                                                <td><?= $tkt['email']; ?></td>
+                                                                <td><?= $try['dari'] ?> -> <?= $try['tujuan'] ?></td>
+                                                                <td><?= $try['jam_berangkat'] ?></td>
+                                                                <td><?= $try['tanggal_berangkat'] ?></td>
+                                                                <td>
+                                                                    <?php if ($pym['bukti_bayar'] == null) : ?>
+                                                                        <p>NULL</p>
+                                                                    <?php else : ?>
+                                                                        <img src="<?= base_url("assets/img/bukti/") . $pym['bukti_bayar'] ?>" alt="bukti-tf" style="width:287px;height:180px">
+                                                                    <?php endif; ?>
+                                                                </td>
+                                                            </tr>
                                 <?php
+                                                        endif;
+                                                    endif;
                                                 endif;
-                                            endif;
+                                            endforeach;
                                         endforeach;
                                     endforeach;
                                 endforeach;
