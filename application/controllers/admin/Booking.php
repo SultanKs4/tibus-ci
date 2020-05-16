@@ -9,6 +9,10 @@ class Booking extends CI_Controller
     {
         parent::__construct();
         $this->load->model('booking_model');
+
+        if (intval($this->session->userdata('id_level'))  < 2 ) {
+			redirect('login', 'refresh');
+		}
     }
 
     public function index()
