@@ -12,12 +12,12 @@
                     <div class="card-body table-full-width table-responsive">
                         <table class="table table-hover table-striped" id="list">
                             <thead>
-                                <th>Kode Booking</th>
                                 <th>Nama Penumpang</th>
                                 <th>No KTP</th>
                                 <th>No Duduk</th>
-                                <th>Email</th>
                                 <th>Trayek</th>
+                                <th>Id Duduk</th>
+                                <th>Id Payment</th>
                                 <th>Action</th>
                             </thead>
                             <tbody>
@@ -25,12 +25,12 @@
                                 foreach ($tiket as $tkt) :
                                 ?>
                                     <tr>
-                                        <td><?= $tkt['name']; ?></td>
                                         <td><?= $tkt['nama_penumpang']; ?></td>
                                         <td><?= $tkt['no_ktp_penumpang']; ?></td>
                                         <td><?= $tkt['no_duduk']; ?></td>
-                                        <td><?= $tkt['email']; ?></td>
-                                        <td><a href="<?= base_url(); ?>admin/trayek/detail/<?= $tkt['id_trayek'] ?>"><?= $tkt['id_trayek'] ?></a></td>
+                                        <td><a href="<?= base_url(); ?>admin/trayek/detail/<?= $tkt['id_trayek'] ?>">Detail Trayek</a></td>
+                                        <td><?= $tkt['id_duduk']; ?></td>
+                                        <td><?= $tkt['id_payment']; ?></td>
                                         <td>
                                             <a href="<?= base_url(); ?>admin/tiket/edit/<?= $tkt['id']; ?> " class="badge badge-success float-right">Edit</a>
                                         </td>

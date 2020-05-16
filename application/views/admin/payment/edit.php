@@ -17,7 +17,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Akun</label>
-                                            <select name="id_akun" class="form-control" disabled>
+                                            <select name="id_akun" class="form-control" readonly>
                                                 <?php
                                                 foreach ($akun as $akn) :
                                                     if ($pym['akun'] == $akn['email']) :
@@ -38,30 +38,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Kode Booking</label>
-                                            <select name="kode_booking" class="form-control" disabled>
-                                                <?php
-                                                foreach ($booking as $bkg) :
-                                                    if ($pym['kode_booking'] == $bkg['name']) :
-                                                ?>
-                                                        <option value="<?= $bkg['id'] ?>" selected><?= $bkg['name'] ?></option>
-                                                    <?php
-                                                    else :
-                                                    ?>
-                                                        <option value="<?= $bkg['id'] ?>"><?= $bkg['name'] ?></option>
-                                                <?php
-                                                    endif;
-                                                endforeach;
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
                                             <label>Total</label>
-                                            <input name="total" type="number" class="form-control" placeholder="Total" value="<?= $pym['total']; ?>" disabled>
+                                            <input name="total" type="number" class="form-control" placeholder="Total" value="<?= $pym['total']; ?>" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +47,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Method</label>
-                                            <select name="metode_bayar" class="form-control" disabled>
+                                            <select name="metode_bayar" class="form-control" readonly>
                                                 <?php
                                                 foreach ($method as $mth) :
                                                     if ($pym['method'] == $mth['name']) :
@@ -91,7 +69,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Bukti Bayar</label>
-                                            <input name="bukti_bayar" type="text" class="form-control" placeholder="Nama File" value="<?= $pym['bukti_bayar']; ?>" disabled>
+                                            <input name="bukti_bayar" type="text" class="form-control" placeholder="Nama File" value="<?= $pym['bukti_bayar']; ?>" readonly>
                                         </div>
                                     </div>
                                 </div>

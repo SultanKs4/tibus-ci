@@ -11,11 +11,10 @@ class tiket extends CI_Controller
         $this->load->model('tiket_model');
         $this->load->model('akun_model');
         $this->load->model('trayek_model');
-        $this->load->model('booking_model');
 
-        if (intval($this->session->userdata('id_level'))  < 2 ) {
-			redirect('login', 'refresh');
-		}
+        if (intval($this->session->userdata('id_level'))  < 2) {
+            redirect('login', 'refresh');
+        }
     }
 
     public function index()
@@ -58,14 +57,13 @@ class tiket extends CI_Controller
         $data['title'] = 'Edit Data tiket';
         $data['tiket'] = $this->tiket_model->gettiketbyid($id);
         $data['akun'] = $this->akun_model->getallakun();
-        $data['booking'] = $this->booking_model->getallbooking();
 
-        $this->form_validation->set_rules('kode_booking', 'Kode_booking', 'required');
         $this->form_validation->set_rules('nama_penumpang', 'Nama_penumpang', 'required');
         $this->form_validation->set_rules('no_ktp_penumpang', 'No_ktp_penumpang', 'required');
         $this->form_validation->set_rules('no_duduk', 'No_duduk', 'required');
         $this->form_validation->set_rules('id_akun', 'id_akun', 'required');
         $this->form_validation->set_rules('id_trayek', 'Id_trayek', 'required');
+        $this->form_validation->set_rules('id_duduk', 'Id_duduk', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('admin/template/header', $data);

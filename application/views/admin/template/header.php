@@ -80,12 +80,6 @@
                         </a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>admin/booking">
-                            <i class="nc-icon nc-cart-simple"></i>
-                            <p>Booking</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>admin/tiket">
                             <i class="nc-icon nc-tag-content"></i>
                             <p>Tiket</p>

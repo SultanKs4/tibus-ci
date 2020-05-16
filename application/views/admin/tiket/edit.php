@@ -16,28 +16,6 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Kode Booking</label>
-                                            <select name="kode_booking" class="form-control">
-                                                <?php
-                                                foreach ($booking as $bkg) :
-                                                    if ($tkt['kode_booking'] == $bkg['id']) :
-                                                ?>
-                                                        <option value="<?= $bkg['id'] ?>" selected><?= $bkg['name'] ?></option>
-                                                    <?php
-                                                    else :
-                                                    ?>
-                                                        <option value="<?= $bkg['id'] ?>"><?= $bkg['name'] ?></option>
-                                                <?php
-                                                    endif;
-                                                endforeach;
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
                                             <label>Nama Penumpang</label>
                                             <input name="nama_penumpang" type="text" class="form-control" placeholder="Nama Penumpang" value="<?= $tkt['nama_penumpang']; ?>">
                                         </div>
@@ -55,7 +33,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>No Duduk</label>
-                                            <input name="no_duduk" type="text" class="form-control" placeholder="No Duduk" value="<?= $tkt['no_duduk']; ?>">
+                                            <input name="no_duduk" type="text" class="form-control" placeholder="No Duduk" value="<?= $tkt['no_duduk']; ?>" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -86,6 +64,22 @@
                                         <div class="form-group">
                                             <label>Trayek</label>
                                             <input name="id_trayek" type="number" class="form-control" placeholder="Trayek" value="<?= $tkt['id_trayek']; ?>" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Id Duduk</label>
+                                            <input name="id_duduk" type="text" class="form-control" placeholder="Id Duduk" value="<?= $tkt['id_duduk']; ?>" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Id Payment</label>
+                                            <input name="id_payment" type="text" class="form-control" placeholder="Id Payment" value="<?= $tkt['id_payment']; ?>" readonly>
                                         </div>
                                     </div>
                                 </div>

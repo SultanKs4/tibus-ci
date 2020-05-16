@@ -13,10 +13,6 @@ foreach ($payment as $pym) :
                                 <?= $pym['akun']; ?>
                             </p>
                             <p class="card-text">
-                                <label for=""><b>Kode Booking:</b></label><br>
-                                <?= $pym['kode_booking']; ?>
-                            </p>
-                            <p class="card-text">
                                 <label for=""><b>Total:</b></label><br>
                                 <?= $pym['total']; ?>
                             </p>

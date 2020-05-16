@@ -61,7 +61,6 @@ class Payment_model extends CI_Model
     {
         $data = [
             "id_akun" => $this->input->post('id_akun', true),
-            "kode_booking" => $this->input->post('kode_booking', true),
             "total" => $this->input->post('total', true),
             "metode_bayar" => $this->input->post('metode_bayar', true),
             "bukti_bayar" => $this->input->post('bukti_bayar', true),
