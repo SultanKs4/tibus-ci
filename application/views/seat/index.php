@@ -12,13 +12,19 @@
                     </div>
                     <div class="col-lg-4 col-xl-6 col-sm-4 col-md-5">
                         <div class="booking-details">
-                            <h2 class="header">Booking Details
-                                <span class="number_plate badge badge-primary fs-12"></span></h2>
-                            <h3> Selected Seats <span id="counter">0</span>:</h3>
-                            <ul id="selected-seats">
-                            </ul>
-                            <p>Total: <b><span id="total">0</span> Kes</b></p>
-                            <br>
+                            <form method="post" action="pembayaran" id="book-form">
+                                <input type="hidden" name="harga" value="<?= 3000 ?>">
+                                <input type="hidden" name="no_duduk" id="no_duduk" value="">
+                                <input type="hidden" name="id_duduk" id="id_duduk" value="">
+                                <h2 class="header">Booking Details
+                                    <span class="number_plate badge badge-primary fs-12"></span></h2>
+                                <h3> Selected Seats <span id="counter">0</span>:</h3>
+                                <ul id="selected-seats">
+                                </ul>
+                                <p>Total: <b>Rp <span id="total">0</span></b></p>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
                         </div>
                         <!-- <div id="legend" class=""></div> -->
                     </div>
