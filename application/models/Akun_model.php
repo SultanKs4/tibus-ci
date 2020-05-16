@@ -40,6 +40,26 @@ class Akun_model extends CI_Model
         return $result['data'];
     }
 
+    public function ubahdataakun() // JS2 B3 no 3
+    {
+        $data = [
+            "id" => $this->input->post('id', true),
+            "email" => $this->input->post('email', true),
+            "nama_depan" => $this->input->post('nama_depan', true),
+            "nama_belakang" => $this->input->post('nama_belakang', true),
+            "telpon" => $this->input->post('telpon', true),
+            "password" => $this->input->post('password', true),
+            "id_level" => '1',
+            'tkn' => 'qwe123'
+        ];
+        $response = $this->_client->request('PUT', 'akun', [
+            'form_params' => $data
+        ]);
+
+        $result = json_decode($response->getBody()->getContents(), true);
+        return $result;
+    }
+
     public function tambahdataakun()
     {
         $data = [

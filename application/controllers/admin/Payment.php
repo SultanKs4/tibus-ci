@@ -13,6 +13,10 @@ class Payment extends CI_Controller
         $this->load->model('booking_model');
         $this->load->model('status_model');
         $this->load->model('method_model');
+
+        if (intval($this->session->userdata('id_level'))  < 2 ) {
+			redirect('login', 'refresh');
+		}
     }
 
     public function index()

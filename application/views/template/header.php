@@ -36,28 +36,24 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
 
                 <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?= base_url(); ?>home">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>seat">Seat</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Ticket</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>pembayaran">Payment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>login/logout">Logout</a>
-                    </li>
+                    <?php
+                    if ($this->session->userdata('id')) :
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>user/akun">MyAccount</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>login/logout">Logout</a>
+                        </li>
+                    <?php
+                    else :
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>login">Login</a>
+                        </li>
+                    <?php
+                    endif;
+                    ?>
                 </ul>
             </div>
         </div>

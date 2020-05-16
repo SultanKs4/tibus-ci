@@ -12,6 +12,10 @@ class tiket extends CI_Controller
         $this->load->model('akun_model');
         $this->load->model('trayek_model');
         $this->load->model('booking_model');
+
+        if (intval($this->session->userdata('id_level'))  < 2 ) {
+			redirect('login', 'refresh');
+		}
     }
 
     public function index()
