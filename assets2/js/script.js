@@ -1,8 +1,7 @@
 //////////////
 // seat map //
 //////////////
-let vip_price = 1500;
-let economy_price = 3000;
+let price = $inputPrice;
 let firstSeatLabel = 1;
 var details = [];
 
@@ -24,7 +23,7 @@ var $cart = $('#selected-seats'),
         ],
         seats: {
             e: {
-                price: economy_price,
+                price: price,
                 classes: 'economy-class', //your custom CSS class
                 category: 'Economy Class'
             }
@@ -48,20 +47,38 @@ var $cart = $('#selected-seats'),
             if (this.status() == 'available') {
                 $(event.target).toggleClass('animated rubberBand')
                     //let's create a new <li> which we'll add to the cart items
-                $('<li class="p-b-4">' + this.data().category + ' Seat # ' +
-                        this.settings.label + ': <b>Ksh ' + this.data().price +
+                if (sc.find('selected').length >= 1) {
+                    //and total
+                    $total.text(recalculateTotal(sc) - this.data().price);
+
+                    //remove the item from our cart
+                    $('#' + sc.find('selected').seatIds)
+                        .toggleClass('animated rubberBand');
+                    $('#cart-item-' + sc.find('selected').seatIds).remove();
+                    $('#no_duduk').val("")
+                    $('#id_duduk').val("")
+                    no = sc.find('selected').seats[0].settings.label;
+                    var filtered = details.filter(function(item) {
+                        return item.seatNo != no;
+                    });
+                    details = filtered;
+                    sc.find('selected').status('available')
+                }
+                $('<li class="p-b-4"> Seat # ' +
+                        this.settings.label + ': <b>Rp ' + this.data().price +
                         '</b> <a href="javascript:void(0);"' +
                         ' class="cancel-cart-item btn btn-danger btn-sm"><i class="fa fa-trash"></i> cancel</a></li>')
                     .attr('id', 'cart-item-' + this.settings.id)
                     .data('seatId', this.settings.id)
                     .appendTo($cart);
-
-                /*
-                 * Lets update the counter and total
-                 *
-                 * .find function will not find the current seat, because it will change its stauts only after return
-                 * 'selected'. This is why we have to add 1 to the length and the current seat price to the total.
-                 */
+                $("#no_duduk").val(this.settings.label)
+                $("#id_duduk").val(this.settings.id)
+                    /*
+                     * Lets update the counter and total
+                     *
+                     * .find function will not find the current seat, because it will change its stauts only after return
+                     * 'selected'. This is why we have to add 1 to the length and the current seat price to the total.
+                     */
                 $counter.text(sc.find('selected').length + 1);
                 $total.text(recalculateTotal(sc) + this.data().price);
                 details.push({
@@ -79,6 +96,8 @@ var $cart = $('#selected-seats'),
 
                 //remove the item from our cart
                 $('#cart-item-' + this.settings.id).remove();
+                $('#no_duduk').val("");
+                $('#id_duduk').val("");
                 no = this.settings.label;
                 var filtered = details.filter(function(item) {
                     return item.seatNo != no;
@@ -96,6 +115,27 @@ var $cart = $('#selected-seats'),
         }
     });
 
+function getBooked() {
+    $.ajax({
+        type: "get",
+        url: "http://localhost/proyek1/tibus-ci-admin/api/tiket/booked",
+        data: {
+            'tkn': 'qwe123',
+            'id_trayek': $idTrayek
+        },
+        dataType: "json",
+        success: (response) => {
+            sc.find('unavailable').status('available')
+            $.each(response.data, (index, booked) => {
+                sc.status(booked.id_duduk, 'unavailable')
+            });
+        }
+    });
+}
+
+getBooked()
+setInterval(getBooked, 10000);
+
 let recalculateTotal = sc => {
         var total = 0;
 
@@ -111,6 +151,8 @@ $('#selected-seats').on('click', '.cancel-cart-item', function() {
     $('#' + sc.get($(this).parents('li:first').data('seatId')).settings.id)
         .toggleClass('animated rubberBand');
     //let's just trigger Click event on the appropriate seat, so we don't have to repeat the logic here
+    $('#no_duduk').val("");
+    $('#id_duduk').val("");
     sc.get($(this).parents('li:first').data('seatId')).click();
 });
 
