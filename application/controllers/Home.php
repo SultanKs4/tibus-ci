@@ -30,9 +30,24 @@ class Home extends CI_Controller
 	{
 		$data['title'] = 'Home';
 		$data['terminal'] = $this->terminal_model->getallterminal();
-		$this->load->view('template/header');
-		$this->load->view('home/index', $data);
-		$this->load->view('template/footer');
-		$this->load->library('session');
+		$this->form_validation->set_rules('dari', 'Dari', 'required|differs[tujuan]');
+		$this->form_validation->set_rules('tujuan', 'Tujuan', 'required|differs[dari]');
+		$this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
+		$this->form_validation->set_rules('penumpang', 'Penumpang', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('template/header');
+			$this->load->view('home/index', $data);
+			$this->load->view('template/footer');
+		} else {
+			$data = array(
+				'dari' => $this->input->post('dari'),
+				'tujuan' => $this->input->post('tujuan'),
+				'tanggal' => $this->input->post('tanggal'),
+				'penumpang' => $this->input->post('penumpang')
+			);
+			$this->session->set_flashdata('home', $data);
+			redirect("trayek");
+		}
 	}
 }
