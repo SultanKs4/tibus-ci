@@ -57,13 +57,13 @@ class Payment_model extends CI_Model
     //     return $result;
     // }
 
-    public function ubahdatapayment() // JS2 B3 no 3
+    public function ubahdatapayment($bukti_bayar = null) // JS2 B3 no 3
     {
         $data = [
             "id_akun" => $this->input->post('id_akun', true),
             "total" => $this->input->post('total', true),
             "metode_bayar" => $this->input->post('metode_bayar', true),
-            "bukti_bayar" => $this->input->post('bukti_bayar', true),
+            "bukti_bayar" => $bukti_bayar,
             "status" => $this->input->post('status', true),
             "id" => $this->input->post('id', true),
             'tkn' => 'qwe123'

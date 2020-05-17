@@ -21,9 +21,8 @@
 </div>
 </body>
 <!--   Core JS Files   -->
-<script src="<?= base_url() ?>assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="<?= base_url() ?>assets/js/plugins/bootstrap-switch.js"></script>
 <!--  Google Maps Plugin    -->
@@ -36,5 +35,6 @@
 <script src="<?= base_url() ?>assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?= base_url() ?>assets/js/demo.js"></script>
+<script src="<?= base_url() ?>assets/js/dataTables.js"></script>
 
 </html>
