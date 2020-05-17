@@ -27,6 +27,7 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="<?= base_url() ?>assets/img/bus.png">
     <title>Payment</title>
 </head>
 
@@ -41,27 +42,24 @@
 
                 <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>home">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Ticket</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?= base_url(); ?>pembayaran">Payment
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>login">Login</a>
-                    </li>
+                    <?php
+                    if ($this->session->userdata('id')) :
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>user/akun">MyAccount</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>login/logout">Logout</a>
+                        </li>
+                    <?php
+                    else :
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>login">Login</a>
+                        </li>
+                    <?php
+                    endif;
+                    ?>
                 </ul>
             </div>
         </div>

@@ -34,8 +34,8 @@
     -->
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="javascript:;" class="simple-text">
-                        Your Logo
+                    <a href="<?= base_url() ?>" class="simple-text">
+                        <img src="<?= base_url() ?>assets/img/bus.png" alt="logo" style="width: 96px; height: 96px;">
                     </a>
                 </div>
                 <ul class="nav">

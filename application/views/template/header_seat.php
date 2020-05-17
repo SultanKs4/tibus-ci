@@ -26,13 +26,14 @@
     <meta name="msapplication-TileColor" content="#2b5797" />
 
     <!-- //for-mobile-apps -->
-    <title>Seat</title>
+    <link rel="icon" href="<?= base_url() ?>assets/img/bus.png">
+    <title>Bus Seat</title>
     <!-- icons -->
-    <link rel="icon" type="image/png" href="<?= base_url(); ?>assets2/images/logo-96.png" sizes="96x96" />
+    <!-- <link rel="icon" type="image/png" href="<?= base_url(); ?>assets2/images/logo-96.png" sizes="96x96" />
     <link rel="icon" type="image/png" href="<?= base_url(); ?>assets2/images/logo-16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="<?= base_url(); ?>assets2/images/logo-32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="<?= base_url(); ?>assets2/images/logo-64.png" sizes="64x64" />
-    <link rel="icon" type="image/png" href="<?= base_url(); ?>assets2/images/logo-128.png" sizes="128x128" />
+    <link rel="icon" type="image/png" href="<?= base_url(); ?>assets2/images/logo-128.png" sizes="128x128" /> -->
     <link rel="apple-touch-icon" sizes="120x120" href="<?= base_url(); ?>images/apple-touch-icon.png" />
     <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5" />
     <link rel="manifest" href="proyek1/tibus-ci/assets2/site.webmanifest">
@@ -66,7 +67,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
         <div class="container">
-            <a class="navbar-brand" href="index.html" style="text-transform: uppercase;">TIBUS.COM</a>
+            <a class="navbar-brand" href="<?= base_url(); ?>" style="text-transform: uppercase;">TIBUS.COM</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -74,27 +75,24 @@
 
                 <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>home">Home</a>
-                    </li>
-
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?= base_url(); ?>seat">Seat
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Ticket</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>pembayaran">Payment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>login/logout">Logout</a>
-                    </li>
+                    <?php
+                    if ($this->session->userdata('id')) :
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>user/akun">MyAccount</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>login/logout">Logout</a>
+                        </li>
+                    <?php
+                    else :
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>login">Login</a>
+                        </li>
+                    <?php
+                    endif;
+                    ?>
                 </ul>
             </div>
         </div>
