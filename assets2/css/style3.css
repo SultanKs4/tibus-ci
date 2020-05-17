@@ -17,4 +17,42 @@
 
 .button{
     padding-top: 20px;
+    font-size: 50%;
+    text-align: center;
+}
+
+img{
+    width: 20%; 
+    height: 20%; 
+    object-fit: contain;
+}
+
+#gfg{
+    width:auto; 
+    text-align:center; 
+    padding:20px;
+}
+
+.font3{
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-bottom: 150px;
+    display: block;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card1 {
+    background-color: white;
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
