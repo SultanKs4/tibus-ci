@@ -58,10 +58,11 @@ class tiket extends CI_Controller
 
     // public function edit($id)
     // {
-    //     $data['title'] = 'Edit Data tiket';
-    //     $data['tiket'] = $this->tiket_model->gettiketbyid($id);
-    //     $data['akun'] = $this->akun_model->getallakun();
-    //     $data['booking'] = $this->booking_model->getallbooking();
+    //     $data['title'] = 'Upload Bukti Transfer';
+    //     $data['akun'] = $this->akun_model->getakunbyid($this->session->userdata('id'));
+    //     $data['trayek'] = $this->trayek_model->getalltrayek();
+    //     $data['payment'] = $this->payment_model->getallpayment();
+    //     $data['tiket'] = $this->tiket_model->getalltiket();
 
     //     $this->form_validation->set_rules('kode_booking', 'Kode_booking', 'required');
     //     $this->form_validation->set_rules('nama_penumpang', 'Nama_penumpang', 'required');

@@ -13,9 +13,7 @@
                         <table class="table table-hover table-striped">
                             <thead>
                                 <th>Nama Penumpang</th>
-                                <th>No KTP</th>
                                 <th>No Duduk</th>
-                                <th>Email</th>
                                 <th>Trayek</th>
                                 <th>Jam Berangkat</th>
                                 <th>Tanggal Berangkat</th>
@@ -33,15 +31,13 @@
                                 ?>
                                                             <tr>
                                                                 <td><?= $tkt['nama_penumpang']; ?></td>
-                                                                <td><?= $tkt['no_ktp_penumpang']; ?></td>
                                                                 <td><?= $tkt['no_duduk']; ?></td>
-                                                                <td><?= $tkt['email']; ?></td>
                                                                 <td><?= $try['dari'] ?> -> <?= $try['tujuan'] ?></td>
                                                                 <td><?= $try['jam_berangkat'] ?></td>
                                                                 <td><?= $try['tanggal_berangkat'] ?></td>
                                                                 <td>
                                                                     <?php if ($pym['bukti_bayar'] == null) : ?>
-                                                                        <p>NULL</p>
+                                                                        <a href="<?= base_url(); ?>user/payment/edit/<?= $pym['id']; ?> " class="badge badge-warning">Upload</a>
                                                                     <?php else : ?>
                                                                         <img src="<?= base_url("assets/img/bukti/") . $pym['bukti_bayar'] ?>" alt="bukti-tf" style="width:287px;height:180px">
                                                                     <?php endif; ?>
