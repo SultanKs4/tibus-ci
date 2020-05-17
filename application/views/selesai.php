@@ -12,7 +12,7 @@
                         Selesai
                     </div>
                     <div class="button">
-                        <a href="#" class="btn btn-circle btn-success book_btn" data-bus="1">Upload Bukti</a>
+                        <a href="<?= base_url(); ?>user/tiket" class="btn btn-circle btn-success book_btn">Upload Bukti</a>
                     </div>
                 </div>
             </div>
