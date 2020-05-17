@@ -4,13 +4,19 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="booking-form">
-					<form>
+					<?php if (validation_errors()) : ?>
+						<div class="alert alert-danger alert-dismissable" role="alert">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<?= validation_errors(); ?>
+						</div>
+					<?php endif ?>
+					<form method="POST" action="">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<span class="form-label">Asal</span>
 									<select class="form-control" name="dari">
-										<option value="" hidden>---select---</option>
+										<option hidden>---select---</option>
 										<?php
 										foreach ($terminal as $trm) :
 										?>
@@ -26,11 +32,11 @@
 								<div class="form-group">
 									<span class="form-label">Tujuan</span>
 									<select class="form-control" name="tujuan">
-										<option value="" hidden>---select---</option>
+										<option hidden>---select---</option>
 										<?php
 										foreach ($terminal as $trm) :
 										?>
-											<option value="<?= $trm['id'] ?>"><?= $trm['kota'] ?>(<?= $trm['nama'] ?>)</option>
+											<option value="<?= $trm['id'] ?>"> <?= $trm['kota'] ?>(<?= $trm['nama'] ?>)</option>
 										<?php
 										endforeach;
 										?>
@@ -41,30 +47,21 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<span class="form-label">Tanggal</span>
-									<input class="form-control" type="date" required>
+									<input class="form-control" type="date" required name="tanggal">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<span class="form-label">Penumpang</span>
-									<select class="form-control">
-										<?php
-										for ($i = 1; $i < 3; $i++) {
-										?>
-											<option value="<?= $i ?>"><?= $i ?> Orang</option>
-										<?php
-										};
-										?>
-									</select>
-									<span class="select-arrow"></span>
+									<input type="text" class="form-control" name="penumpang" id="penumpang" value="1" readonly>
 								</div>
 							</div>
 						</div>
 						<div class="form-btn">
 							<button class="submit-btn">Check availability</button>
 						</div>
+					</form>
 				</div>
-				</form>
 			</div>
 		</div>
 		<div class="col-md-12">

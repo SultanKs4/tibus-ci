@@ -84,6 +84,7 @@ class Trayek_model extends CI_Model
         $result = json_decode($response->getBody()->getContents(), true);
         return $result;
     }
+
     public function gettrayekbyid($id) //JS4 B1 no 5
     {
         $response = $this->_client->request('GET', 'trayek', [
@@ -96,6 +97,20 @@ class Trayek_model extends CI_Model
         $result = json_decode($response->getBody()->getContents(), true);
         return $result['data'];
     }
+
+    public function searchTrayek($dari, $tujuan, $tanggal)
+    {
+        $response = $this->_client->request('GET', 'trayek/search', [
+            'query' => [
+                'tkn' => 'qwe123',
+                'dari' => $dari,
+                'tujuan' => $tujuan,
+                'tanggal' => $tanggal,
+            ]
+        ]);
+
+        $result = json_decode($response->getBody()->getContents(), true);
+        return $result['data'];
+    }
 }
-    
     /* End of file trayek_model.php */
