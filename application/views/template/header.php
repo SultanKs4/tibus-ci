@@ -22,6 +22,7 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="<?= base_url() ?>assets/img/bus.png">
     <title><?= $title ?></title>
 
 </head>

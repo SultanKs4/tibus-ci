@@ -36,7 +36,7 @@ class Home extends CI_Controller
 		$this->form_validation->set_rules('penumpang', 'Penumpang', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('template/header');
+			$this->load->view('template/header', $data);
 			$this->load->view('home/index', $data);
 			$this->load->view('template/footer');
 		} else {
