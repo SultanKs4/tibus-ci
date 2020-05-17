@@ -67,6 +67,10 @@ body {
     background-size: cover;
 }
 
+.img-container {
+    text-align: center;
+    display: block;
+  }
 /*body:before{
     content: "";
     display: block;
@@ -324,6 +328,7 @@ div.buttons {
 }
 
 /*searc options*/
+
 .bus-name {
     font-family: kanit_medium;
 }
