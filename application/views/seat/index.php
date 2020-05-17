@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-lg-4 col-xl-6 col-sm-4 col-md-5">
                         <div class="booking-details">
-                            <form method="post" action="pembayaran" id="book-form">
+                            <form method="post" action="" id="book-form">
                                 <input type="hidden" name="harga" value="<?= 3000 ?>">
                                 <input type="hidden" name="no_duduk" id="no_duduk" value="">
                                 <input type="hidden" name="id_duduk" id="id_duduk" value="">
