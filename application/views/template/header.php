@@ -17,6 +17,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets2/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets2/css/style3.css">
     <link type="text/css" rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
     <link type="text/css" rel="stylesheet" href="<?= base_url(); ?>assets/css/header.css">
     <!------ Include the above in your HEAD tag ---------->

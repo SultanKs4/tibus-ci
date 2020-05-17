@@ -26,7 +26,7 @@
     <meta name="msapplication-TileColor" content="#2b5797" />
 
     <!-- //for-mobile-apps -->
-    <title>Bus Seat Reservation</title>
+    <title>Seat</title>
     <!-- icons -->
     <link rel="icon" type="image/png" href="<?= base_url(); ?>assets2/images/logo-96.png" sizes="96x96" />
     <link rel="icon" type="image/png" href="<?= base_url(); ?>assets2/images/logo-16.png" sizes="16x16" />
