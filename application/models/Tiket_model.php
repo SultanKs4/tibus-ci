@@ -70,6 +70,15 @@ class tiket_model extends CI_Model
             "no_duduk" => $data['no_duduk'],
             "id_trayek" => $data['id_trayek'],
             "id_duduk" => $data['id_duduk'],
+            "id_po" => $data['id_po'],
+            "dari" => $data['id_dari'],
+            "tujuan" => $data['id_tujuan'],
+            "jam_berangkat" => $data['jam_berangkat'],
+            "jam_tiba" => $data['jam_tiba'],
+            "tanggal_berangkat" => $data['tanggal_berangkat'],
+            "tanggal_tiba" => $data['tanggal_tiba'],
+            "harga" => $data['harga'],
+            "sisa_kursi" => $data['sisa_kursi'],
             'tkn' => 'qwe123'
         ];
         try {

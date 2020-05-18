@@ -12,9 +12,9 @@ class Trayek extends CI_Controller
         $this->load->model('po_model');
         $this->load->model('terminal_model');
 
-        if (intval($this->session->userdata('id_level'))  < 2 ) {
-			redirect('login', 'refresh');
-		}
+        if (intval($this->session->userdata('id_level'))  < 2) {
+            redirect('login', 'refresh');
+        }
     }
 
     public function index()
@@ -74,6 +74,7 @@ class Trayek extends CI_Controller
         $this->form_validation->set_rules('tanggal_berangkat', 'Tanggal_berangkat', 'required');
         $this->form_validation->set_rules('tanggal_tiba', 'Tanggal_tiba', 'required');
         $this->form_validation->set_rules('harga', 'Harga', 'required|numeric');
+
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('admin/template/header', $data);

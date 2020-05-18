@@ -105,6 +105,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <input name="sisa_kursi" type="hidden" class="form-control" placeholder="total kursi" value="39" require>
                             <button type="submit" name="submit" class="btn btn-info btn-fill pull-right">Add</button>
                         </form>
                     </div>

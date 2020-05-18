@@ -1,14 +1,36 @@
+<?php
+foreach ($po as $p) {
+    if ($p['nama'] == $seat['po']) {
+        $id_po = $p['id'];
+        break;
+    }
+}
+
+foreach ($terminal as $trm) {
+    if ($trm['nama'] == $seat['dari']) {
+        $id_dari = $trm['id'];
+    }
+    if ($trm['nama'] == $seat['tujuan']) {
+        $id_tujuan = $trm['id'];
+        break;
+    }
+}
+?>
 <div class="container1 m-4 p-2">
     <h1 class="text-center">PAYMENT</h1>
     <div class="container-fluid">
         <form class="" action="" method="post">
             <input type="hidden" name="id" value="<?= $seat['id'] ?>">
+            <input type="hidden" name="id_po" value="<?= $id_po ?>">
+            <input type="hidden" name="id_dari" value="<?= $id_dari ?>">
+            <input type="hidden" name="id_tujuan" value="<?= $id_tujuan ?>">
             <input type="hidden" name="id_akun" value="<?= $this->session->userdata('id'); ?>">
             <input type="hidden" name="status" value="1">
             <input type="hidden" name="jam_tiba" value="<?= $seat['jam_tiba'] ?>">
             <input type="hidden" name="tanggal_berangkat" value="<?= $seat['tanggal_berangkat'] ?>">
             <input type="hidden" name="tanggal_tiba" value="<?= $seat['tanggal_tiba'] ?>">
             <input type="hidden" name="id_duduk" id="id_duduk" value="<?= $seat['id_duduk'] ?>">
+            <input type="hidden" name="sisa_kursi" value="<?= $seat['sisa_kursi'] - 1 ?>">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col">

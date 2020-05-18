@@ -24,6 +24,7 @@
                                 <input type="hidden" name="harga" value="<?= $penumpang['harga'] ?>">
                                 <input type="hidden" name="nama_penumpang" value="<?= $penumpang['nama_penumpang'] ?>">
                                 <input type="hidden" name="no_ktp_penumpang" value="<?= $penumpang['no_ktp_penumpang'] ?>">
+                                <input type="hidden" name="sisa_kursi" value="<?= $penumpang['sisa_kursi'] ?>">
                                 <input type="hidden" name="no_duduk" id="no_duduk" value="">
                                 <input type="hidden" name="id_duduk" id="id_duduk" value="">
                                 <h2 class="header">Booking Details

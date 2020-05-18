@@ -3,6 +3,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ServerException;
 
 class Trayek_model extends CI_Model
 {
@@ -53,11 +54,17 @@ class Trayek_model extends CI_Model
             "tanggal_berangkat" => $this->input->post('tanggal_berangkat', true),
             "tanggal_tiba" => $this->input->post('tanggal_tiba', true),
             "harga" => $this->input->post('harga', true),
+            "sisa_kursi" => $this->input->post('sisa_kursi', true),
             'tkn' => 'qwe123'
         ];
-        $response = $this->_client->request('POST', 'trayek', [
-            'form_params' => $data
-        ]);
+        try {
+            $response = $this->_client->request('POST', 'trayek', [
+                'form_params' => $data
+            ]);
+        } catch (ServerException $th) {
+            echo $th->getResponse()->getBody();
+            die();
+        }
 
         $result = json_decode($response->getBody()->getContents(), true);
         return $result;
@@ -75,6 +82,7 @@ class Trayek_model extends CI_Model
             "tanggal_tiba" => $this->input->post('tanggal_tiba', true),
             "harga" => $this->input->post('harga', true),
             "id" => $this->input->post('id', true),
+            "sisa_kursi" => $this->input->post('sisa_kursi', true),
             'tkn' => 'qwe123'
         ];
         $response = $this->_client->request('PUT', 'trayek', [
