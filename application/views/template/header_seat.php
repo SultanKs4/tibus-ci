@@ -56,8 +56,8 @@
     <link type="text/css" rel="stylesheet" href="<?= base_url(); ?>assets/css/header.css">
     <!-- end of css -->
     <script>
-        $inputPrice = <?= 3000; ?>;
-        $idTrayek = <?= 1; ?>;
+        $inputPrice = <?= $penumpang['harga']; ?>;
+        $idTrayek = <?= $penumpang['id']; ?>;
     </script>
 </head>
 

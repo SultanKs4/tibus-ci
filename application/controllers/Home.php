@@ -46,7 +46,7 @@ class Home extends CI_Controller
 				'tanggal' => $this->input->post('tanggal'),
 				'penumpang' => $this->input->post('penumpang')
 			);
-			$this->session->set_flashdata('home', $data);
+			$this->session->set_userdata('home', $data);
 			redirect("trayek");
 		}
 	}
