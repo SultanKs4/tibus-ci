@@ -15,7 +15,7 @@ $(document).ready(function() {
         $.each($bank, function(index, data) {
             if ($("input[name='pembayaran']:checked").val() == data.id) {
                 $('#detail').val("");
-                $('#detail').val("No Rekening: " + data.no + " \nAtas Nama: " + data.an);
+                $('#detail').val("Jenis: " + data.name + "\nNo Rekening: " + data.no + " \nAtas Nama: " + data.an);
             }
         });
     });

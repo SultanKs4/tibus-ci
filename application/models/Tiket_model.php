@@ -3,6 +3,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ServerException;
 
 class tiket_model extends CI_Model
 {
@@ -56,6 +57,32 @@ class tiket_model extends CI_Model
     //     $result = json_decode($response->getBody()->getContents(), true);
     //     return $result;
     // }
+
+    public function transactionTiket($data)
+    {
+        $data = [
+            "id_akun" => $data['id_akun'],
+            "total" => $data['harga'],
+            "metode_bayar" => $data['metode_bayar'],
+            "status" => $data['status'],
+            "nama_penumpang" => $data['nama_penumpang'],
+            "no_ktp_penumpang" => $data['no_ktp_penumpang'],
+            "no_duduk" => $data['no_duduk'],
+            "id_trayek" => $data['id_trayek'],
+            "id_duduk" => $data['id_duduk'],
+            'tkn' => 'qwe123'
+        ];
+        try {
+            $response = $this->_client->request('POST', 'tiket/trans', [
+                'form_params' => $data
+            ]);
+        } catch (ServerException $th) {
+            echo $th->getResponse()->getBody();
+        }
+
+        $result = json_decode($response->getBody()->getContents(), true);
+        return $result;
+    }
 
     public function ubahdatatiket() // JS2 B3 no 3
     {

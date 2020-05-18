@@ -13,7 +13,7 @@
                 <input type="text" name="tanggal_berangkat" value="<?= $try['tanggal_berangkat'] ?>" hidden>
                 <input type="text" name="tanggal_tiba" value="<?= $try['tanggal_tiba'] ?>" hidden>
                 <input type="text" name="harga" value="<?= $try['harga'] ?>" hidden>
-                <div class="card">
+                <div class="card mt-5">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-2">
@@ -37,9 +37,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="button">
-                                    <a href="#" class="submit btn btn-circle btn-success book_btn" data-bus="1">Pilih Tempat Duduk</a>
-                                </div>
+                                <button type="submit" class="submit btn btn-circle btn-success book_btn mt-4 align-self-end">Pilih Bus</button>
                             </div>
                         </div>
                     </div>
