@@ -18,7 +18,7 @@
                                 <th>Jam Berangkat</th>
                                 <th>Tanggal Berangkat</th>
                                 <th>Bukti Bayar</th>
-                                <th>Action</th>
+                                <!-- <th>Action</th> -->
                             </thead>
                             <tbody>
                                 <?php
@@ -43,9 +43,9 @@
                                                                     <?php else : ?>
                                                                         <img src="<?= base_url("assets/img/payment/") . $pym['bukti_bayar'] ?>" alt="bukti-tf" style="max-width: 300px; max-height:300px" class="img-responsive pt-2">
                                                                 </td>
-                                                                <td>
+                                                                <!-- <td>
                                                                     <a href="<?= base_url(); ?>user/payment/delete" class="badge badge-danger">Delete</a>
-                                                                </td>
+                                                                </td> -->
                                                             <?php endif; ?>
                                                             </tr>
                                 <?php
