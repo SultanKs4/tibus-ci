@@ -9,7 +9,7 @@ class Penumpang extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if (intval($this->session->userdata('id_level'))  > 1) {
+        if (intval($this->session->userdata('id_level'))  > 1 || $this->session->userdata('id') == null) {
             redirect('login', 'refresh');
         }
         if ($this->session->userdata('trayek') != null) {
@@ -40,6 +40,7 @@ class Penumpang extends CI_Controller
                 'tanggal_berangkat' => $this->input->post('tanggal_berangkat'),
                 'tanggal_tiba' => $this->input->post('tanggal_tiba'),
                 'harga' => $this->input->post('harga'),
+                'sisa_kursi' => $this->input->post('sisa_kursi'),
                 'nama_penumpang' => $this->input->post('nama_penumpang'),
                 'no_ktp_penumpang' => $this->input->post('no_ktp_penumpang'),
             );

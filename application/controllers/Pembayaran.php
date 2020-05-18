@@ -9,8 +9,7 @@ class Pembayaran extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
-        if (intval($this->session->userdata('id_level'))  > 1) {
+        if (intval($this->session->userdata('id_level'))  > 1 || $this->session->userdata('id') == null) {
             redirect('login', 'refresh');
         }
         if ($this->session->userdata('seat') == null) {
@@ -18,6 +17,8 @@ class Pembayaran extends CI_Controller
         } else {
             $this->data = $this->session->userdata('seat');
             $this->load->model('Method_model', 'payment');
+            $this->load->model('Po_model', 'po');
+            $this->load->model('Terminal_model', 'terminal');
         }
     }
 
@@ -38,12 +39,16 @@ class Pembayaran extends CI_Controller
                 'tanggal_berangkat' => $this->input->post('tanggal_berangkat'),
                 'tanggal_tiba' => $this->input->post('tanggal_tiba'),
                 'harga' => $this->input->post('harga'),
+                'sisa_kursi' => $this->input->post('sisa_kursi'),
                 'nama_penumpang' => $this->input->post('nama_penumpang'),
                 'no_ktp_penumpang' => $this->input->post('no_ktp_penumpang'),
                 'no_duduk' => $this->input->post('no_duduk'),
                 'id_duduk' => $this->input->post('id_duduk'),
                 'metode_bayar' => $this->input->post('pembayaran'),
                 'status' => $this->input->post('status'),
+                'id_po' => $this->input->post('id_po'),
+                'id_dari' => $this->input->post('id_dari'),
+                'id_tujuan' => $this->input->post('id_tujuan'),
             );
             $this->session->unset_userdata('penumpang');
             $this->tiket_model->transactionTiket($data);
@@ -51,6 +56,8 @@ class Pembayaran extends CI_Controller
         } else {
             $data['seat'] = $this->data;
             $data['payment'] = $this->payment->getallmethod();
+            $data['po'] = $this->po->getallpo();
+            $data['terminal'] = $this->terminal->getallterminal();
             $this->load->view('template/header_pembayaran');
             $this->load->view('pembayaran/index', $data);
             $this->load->view('template/footer_pembayaran');

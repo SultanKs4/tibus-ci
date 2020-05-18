@@ -30,6 +30,7 @@ class Trayek extends CI_Controller
                 'tanggal_berangkat' => $this->input->post('tanggal_berangkat'),
                 'tanggal_tiba' => $this->input->post('tanggal_tiba'),
                 'harga' => $this->input->post('harga'),
+                'sisa_kursi' => $this->input->post('sisa_kursi'),
             );
             $this->session->unset_userdata('home');
             $this->session->set_userdata('trayek', $data);

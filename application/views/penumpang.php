@@ -11,6 +11,7 @@
             <input type="hidden" name="tanggal_berangkat" value="<?= $trayek['tanggal_berangkat'] ?>">
             <input type="hidden" name="tanggal_tiba" value="<?= $trayek['tanggal_tiba'] ?>">
             <input type="hidden" name="harga" value="<?= $trayek['harga'] ?>">
+            <input type="hidden" name="sisa_kursi" value="<?= $trayek['sisa_kursi'] ?>">
             <div class="container-fluid">
                 <div class="col-6 ml-auto mr-auto">
                     <div class="card">
