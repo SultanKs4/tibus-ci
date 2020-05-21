@@ -118,7 +118,7 @@ var $cart = $('#selected-seats'),
 function getBooked() {
     $.ajax({
         type: "get",
-        url: "http://localhost/proyek1/tibus-ci-admin/api/tiket/booked",
+        url: "http://localhost:8000/api/tiket/booked",
         data: {
             'tkn': 'qwe123',
             'id_trayek': $idTrayek
