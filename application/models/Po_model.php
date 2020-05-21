@@ -12,7 +12,7 @@ class Po_model extends CI_Model
     public function __construct()
     {
         $this->_client = new Client([
-            'base_uri' => 'http://localhost/proyek1/tibus-ci-admin/api/'
+            'base_uri' => 'http://localhost/proyek1/tibus/public/api/'
         ]);
     }
 
