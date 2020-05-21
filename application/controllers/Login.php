@@ -9,7 +9,7 @@ class Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->client = new GuzzleHttp\Client(['base_uri' => 'http://localhost/proyek1/tibus-ci-admin/api/']);
+        $this->client = new GuzzleHttp\Client(['base_uri' => 'http://localhost:8000/api/']);
     }
 
     public function index()
