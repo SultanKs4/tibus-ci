@@ -85,7 +85,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Tanggal Berangkat</label>
-                                        <input name="tanggal_berangkat" type="date" id="date" class="form-control" placeholder="Tanggal Berangkat" require>
+                                        <input name="tanggal_berangkat" type="date" class="form-control date" placeholder="Tanggal Berangkat" require>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Tanggal Tiba</label>
-                                        <input name="tanggal_tiba" type="date" id="date" class="form-control" placeholder="Tanggal Tiba" require>
+                                        <input name="tanggal_tiba" type="date" class="form-control date" placeholder="Tanggal Tiba" require>
                                     </div>
                                 </div>
                             </div>
@@ -127,6 +127,6 @@
             day = '0' + day.toString();
 
         var maxDate = year + '-' + month + '-' + day;
-        $('#date').attr('min', maxDate);
+        $('.date').attr('min', maxDate);
     });
 </script>
