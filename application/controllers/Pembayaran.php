@@ -26,7 +26,8 @@ class Pembayaran extends CI_Controller
     {
         $data['title'] = 'Pembayaran';
         $data['title'] = 'Seat';
-        if ($this->input->post('id') != null) {
+        $this->form_validation->set_rules('pembayaran', 'Metode Pembayaran', 'required|numeric');
+        if ($this->input->post('id') != null || $this->form_validation->run() == FALSE) {
             $this->load->model('tiket_model');
             $data = array(
                 'id_trayek' => $this->input->post('id'),
