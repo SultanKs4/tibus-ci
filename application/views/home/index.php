@@ -47,7 +47,7 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<span class="form-label">Tanggal</span>
-									<input class="form-control" type="date" required name="tanggal">
+									<input class="form-control" type="date" id="date" required name="tanggal">
 								</div>
 							</div>
 							<div class="col-sm-6">
@@ -81,3 +81,19 @@
 </div>
 <!-- </div> -->
 </div>
+<script>
+	$(function() {
+		var dtToday = new Date();
+
+		var month = dtToday.getMonth() + 1;
+		var day = dtToday.getDate();
+		var year = dtToday.getFullYear();
+		if (month < 10)
+			month = '0' + month.toString();
+		if (day < 10)
+			day = '0' + day.toString();
+
+		var maxDate = year + '-' + month + '-' + day;
+		$('#date').attr('min', maxDate);
+	});
+</script>
