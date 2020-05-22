@@ -85,13 +85,13 @@ foreach ($terminal as $trm) {
                             <p>Bank Transfer</p>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label pembayaranwrapper" for="BCA">
-                                    <input class="form-check-input" type="radio" name="pembayaran" id="BCA" value="<?= $payment[0]['id'] ?>">
+                                    <input class="form-check-input" type="radio" name="pembayaran" id="BCA" value="<?= $payment[0]['id'] ?>" required>
                                     <img src="<?= base_url(); ?>assets/img/logo-bca.png" width="60px" height="20px">
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label pembayaranwrapper" for="BNI">
-                                    <input class="form-check-input" type="radio" name="pembayaran" id="BNI" value="<?= $payment[1]['id'] ?>">
+                                    <input class="form-check-input" type="radio" name="pembayaran" id="BNI" value="<?= $payment[1]['id'] ?>" required>
                                     <img src="<?= base_url(); ?>assets/img/bni.png" width="60px" height="20px">
                                 </label>
                             </div>
